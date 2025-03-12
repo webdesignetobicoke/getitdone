@@ -1,25 +1,31 @@
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import SaleBanner from './components/SaleBanner';
-import TrustBar from './components/TrustBar';
-import Footer from './components/Footer';
-import LatestOffers from './components/LatestOffers';
-import RollerBlinds from './components/RollerBlinds';
-import VenetianBlinds from './components/VenetianBlinds';
-import Services from './components/Services';
-import Breadcrumbs from './components/Breadcrumbs';
+import Navbar from './Navbar';
+import Hero from './Hero';
+import SaleBanner from './SaleBanner';
+import TrustBar from './TrustBar';
+import Footer from './Footer';
+import LatestOffers from './LatestOffers';
+import Services from './Services';
+import Breadcrumbs from './Breadcrumbs';
+import CosmeticDentistry from './CosmeticDentistry';
+import TeamSection from './TeamSection';
 import { useState } from 'react';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
+
+  const handlePageChange = (page: string) => {
+    console.log('Setting current page to:', page);
+    setCurrentPage(page);
+  };
+
   return (
     <div className="min-h-screen bg-white text-black">
       <div className="block md:hidden">
         <SaleBanner />
       </div>
-      <Navbar setCurrentPage={setCurrentPage} />
+      <Navbar setCurrentPage={handlePageChange} />
       <TrustBar />
-      {currentPage !== 'home' && <Breadcrumbs currentPage={currentPage} />}
+      {currentPage !== 'home' && <Breadcrumbs currentPage={currentPage} setCurrentPage={handlePageChange} />}
       <main className="flex-grow">
         {currentPage === 'home' && (
           <>
@@ -28,22 +34,16 @@ function App() {
             </div>
             <div className="container mx-auto px-4 space-y-12 py-8">
               <Hero />
-              <Services />
+              <Services setCurrentPage={handlePageChange} />
               <LatestOffers />
-              <ProductShowcase />
+              <TeamSection />
             </div>
           </>
         )}
         
-        {currentPage === 'roller-blinds' && (
+        {currentPage === 'cosmetic-dentistry' && (
           <div className="container mx-auto px-4 py-8">
-            <RollerBlinds />
-          </div>
-        )}
-        
-        {currentPage === 'venetian-blinds' && (
-          <div className="container mx-auto px-4 py-8">
-            <VenetianBlinds />
+            <CosmeticDentistry setCurrentPage={handlePageChange} />
           </div>
         )}
       </main>

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { 
-  Menu, X, Phone, ArrowRight, Blinds, Warehouse, 
-  Umbrella, BookOpen, Building2, Sofa, PanelTop,
-  RotateCw, Rows, 
-  Square, SlidersHorizontal, Store, ChevronsUpDown,
-  Building, Users, BedDouble, Bath, UmbrellaIcon, Ruler
+  Menu, X, Phone, ArrowRight, Info, 
+  Briefcase, Smile, Star, Users,
+  ChevronDown, Flame, Stethoscope,
+  FileText, Clock, Calendar, Heart,
+  ClipboardList, UserPlus, Building
 } from 'lucide-react';
+import ContactFormModal from './ContactFormModal';
 
 interface NavbarProps {
   setCurrentPage: (page: string) => void;
@@ -13,25 +14,80 @@ interface NavbarProps {
 
 const Navbar = ({ setCurrentPage }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleNavigation = (page: string) => {
     setCurrentPage(page);
     setIsOpen(false);
+    setActiveDropdown(null);
+  };
+
+  const navItems = {
+    about: {
+      label: 'About',
+      icon: <Info size={20} />,
+      items: [
+        { label: 'About Us', icon: <Users size={18} />, page: 'about-us' },
+        { label: 'Our Story', icon: <Building size={18} />, page: 'our-story' },
+        { label: 'Our Team', icon: <Users size={18} />, page: 'our-team' },
+        { label: 'Technology', icon: <Stethoscope size={18} />, page: 'technology' },
+        { label: 'Office Tour', icon: <Building size={18} />, page: 'office-tour' }
+      ]
+    },
+    services: {
+      label: 'Services',
+      icon: <Briefcase size={20} />,
+      items: [
+        { label: 'General Dentistry', icon: <Flame size={18} />, page: 'general-dentistry' },
+        { label: 'Cosmetic Dentistry', icon: <Smile size={18} />, page: 'cosmetic-dentistry' },
+        { label: 'Emergency Care', icon: <Heart size={18} />, page: 'emergency-care' }
+      ]
+    },
+    invisalign: {
+      label: 'Invisalign®',
+      icon: <Smile size={20} />,
+      items: [
+        { label: 'How It Works', icon: <FileText size={18} />, page: 'invisalign-process' },
+        { label: 'Treatment Timeline', icon: <Clock size={18} />, page: 'invisalign-timeline' },
+        { label: 'Book Consultation', icon: <Calendar size={18} />, page: 'invisalign-consultation' }
+      ]
+    },
+    specialties: {
+      label: 'Specialties',
+      icon: <Star size={20} />,
+      items: [
+        { label: 'Dental Implants', icon: <Flame size={18} />, page: 'dental-implants' },
+        { label: 'Orthodontics', icon: <Smile size={18} />, page: 'orthodontics' },
+        { label: 'Oral Surgery', icon: <Stethoscope size={18} />, page: 'oral-surgery' }
+      ]
+    },
+    patients: {
+      label: 'Patients',
+      icon: <Users size={20} />,
+      items: [
+        { label: 'Patient Forms', icon: <ClipboardList size={18} />, page: 'patient-forms' },
+        { label: 'New Patients', icon: <UserPlus size={18} />, page: 'new-patients' },
+        { label: 'Insurance', icon: <FileText size={18} />, page: 'insurance' }
+      ]
+    }
   };
 
   return (
     <nav className="bg-white">
-      {/* Top Header - Opening Hours & Secondary Navigation */}
-      <div className="hidden md:block bg-white py-2 border-b">
+      {/* Top Header - Location & Secondary Navigation */}
+      <div className="hidden md:block bg-gradient-to-r from-gray-100 to-gray-50 py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-2">
-            <p className="text-sm text-gray-600">535 The East Mall, Toronto, Ontario M9B 4A4, Canada</p>
-            <div className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-6 text-sm">
-              {['About', 'Areas Covered', 'Gallery', 'Inspiration', 'Blog', 'Contact'].map((item) => (
+            <p className="text-sm text-gray-600 flex items-center gap-2 hover:text-[#32A2CD] transition-colors">
+              <Phone size={14} /> 250 Dundas St W, Mississauga, ON L5B 1J2
+            </p>
+            <div className="flex flex-wrap justify-center md:justify-end gap-6 text-sm font-medium">
+              {['About', 'Services', 'Patient Forms', 'Contact'].map((item) => (
                 <a 
                   key={item} 
                   onClick={() => handleNavigation(item.toLowerCase().replace(' ', '-'))}
-                  className="text-gray-700 cursor-pointer"
+                  className="text-gray-600 hover:text-[#32A2CD] transition-colors duration-200 cursor-pointer hover:underline"
                 >
                   {item}
                 </a>
@@ -41,336 +97,144 @@ const Navbar = ({ setCurrentPage }: NavbarProps) => {
         </div>
       </div>
       
-      {/* Company Logo, Phone, CTA */}
-      <div className="hidden md:block bg-white py-4 border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0 text-center md:text-left">
-            <h1 className="text-2xl font-bold text-[#1E4D2B]">MODERN BLINDS & SHUTTERS</h1>
-            <p className="text-sm text-gray-500">shades, office blinds and shutters</p>
-          </div>
-          <div className="flex flex-col md:flex-row items-center gap-4">
-            <div className="flex items-center gap-2">
-              <Phone className="text-[#a8bf4c]" />
-              <div>
-                <p className="text-xs text-gray-600">Call us on</p>
-                <p className="font-bold">0808 196 5284</p>
-              </div>
+      {/* Main Header with Logo & CTA */}
+      <div className="hidden md:block bg-white py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center">
+            <div className="flex items-center gap-8">
+              <img 
+                src="/logos/cura-dental-logo.png" 
+                alt="Cura Dental Logo" 
+                className="h-16 w-auto hover:opacity-90"
+              />
             </div>
-            <button className="bg-[#a8bf4c] text-white px-4 py-2 flex items-center gap-2 font-semibold">
-              REQUEST A FREE QUOTATION
-              <ArrowRight size={16} />
-            </button>
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 border-r border-gray-200 pr-6">
+                <Phone className="text-[#32A2CD] h-8 w-8" />
+                <div>
+                  <p className="text-xs text-gray-500 font-medium">Call us on</p>
+                  <p className="font-bold text-lg text-gray-800 hover:text-[#32A2CD]">(905) 277-2872</p>
+                </div>
+              </div>
+              <button 
+                onClick={() => setIsModalOpen(true)}
+                className="bg-[#32A2CD] hover:bg-opacity-90 text-white px-6 py-3 flex items-center gap-2 font-medium"
+              >
+                REQUEST AN APPOINTMENT
+                <ArrowRight size={16} />
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Main Navigation */}
-      <div className="border-b shadow-sm">
+      <div className="border-t border-b border-gray-200 shadow-sm bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="hidden md:flex items-center gap-10 py-4">
-            <a 
-              onClick={() => handleNavigation('home')} 
-              className="text-gray-700"
-            >
-              <svg className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-              </svg>
-            </a>
-            <div className="relative group">
-              <a 
-                className="text-gray-700 flex items-center gap-2 font-medium cursor-pointer"
-              >
-                <Blinds className="w-5 h-5" />
-                Blinds
-                <svg className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </a>
-              <div className="absolute hidden group-hover:block bg-white shadow-lg rounded-md p-2 w-48 z-10">
-                <a 
-                  onClick={() => handleNavigation('roller-blinds')}
-                  className="block px-4 py-2 text-gray-700 rounded-md cursor-pointer flex items-center gap-2"
+          <div className="hidden md:flex items-center gap-8 py-4">
+            {/* Navigation menu items */}
+            <div className="flex items-center gap-6">
+              {Object.entries(navItems).map(([key, item]) => (
+                <div
+                  key={key}
+                  className="relative"
+                  onMouseEnter={() => setActiveDropdown(key)}
+                  onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <RotateCw className="w-5 h-5" />
-                  Roller Blinds
-                </a>
-                <a 
-                  onClick={() => handleNavigation('venetian-blinds')}
-                  className="block px-4 py-2 text-gray-700 rounded-md cursor-pointer flex items-center gap-2"
-                >
-                  <SlidersHorizontal className="w-5 h-5" />
-                  Venetian Blinds
-                </a>
-                <a className="block px-4 py-2 text-gray-700 rounded-md cursor-pointer flex items-center gap-2">
-                  <Rows className="w-5 h-5" />
-                  Vertical Blinds
-                </a>
-              </div>
+                  <button
+                    className="text-gray-700 hover:text-primary cursor-pointer flex items-center gap-2 text-lg font-medium"
+                  >
+                    {item.icon}
+                    {item.label}
+                    <ChevronDown size={16} />
+                  </button>
+                  
+                  {activeDropdown === key && (
+                    <div className="absolute top-full left-0 w-64 bg-white border border-gray-200 rounded-lg shadow-lg py-2 z-50">
+                      {item.items.map((subItem) => (
+                        <button
+                          key={subItem.page}
+                          onClick={() => handleNavigation(subItem.page)}
+                          className="w-full px-4 py-2 text-left text-gray-700 hover:text-primary hover:bg-gray-50 flex items-center gap-3"
+                        >
+                          {subItem.icon}
+                          {subItem.label}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
-            <div className="relative group">
-              <a 
-                className="text-gray-700 flex items-center gap-2 font-medium cursor-pointer"
-              >
-                <Warehouse className="w-5 h-5" />
-                Shutters
-                <svg className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </a>
-              <div className="absolute hidden group-hover:block bg-white shadow-lg rounded-md p-2 w-48 z-10">
-                <a 
-                  onClick={() => handleNavigation('full-height-shutters')}
-                  className="block px-4 py-2 text-gray-700 rounded-md cursor-pointer flex items-center gap-2"
-                >
-                  <Square className="w-5 h-5" />
-                  Full Height
-                </a>
-                <a 
-                  onClick={() => handleNavigation('tier-on-tier-shutters')}
-                  className="block px-4 py-2 text-gray-700 rounded-md cursor-pointer flex items-center gap-2"
-                >
-                  <ChevronsUpDown className="w-5 h-5" />
-                  Tier on Tier
-                </a>
-              </div>
-            </div>
-            <div className="relative group">
-              <a 
-                className="text-gray-700 flex items-center gap-2 font-medium cursor-pointer"
-              >
-                <Umbrella className="w-5 h-5" />
-                Awnings
-                <svg className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </a>
-              <div className="absolute hidden group-hover:block bg-white shadow-lg rounded-md p-2 w-48 z-10">
-                <a 
-                  onClick={() => handleNavigation('patio-awnings')}
-                  className="block px-4 py-2 text-gray-700 rounded-md cursor-pointer flex items-center gap-2"
-                >
-                  <UmbrellaIcon className="w-5 h-5" />
-                  Patio Awnings
-                </a>
-                <a 
-                  onClick={() => handleNavigation('commercial-awnings')}
-                  className="block px-4 py-2 text-gray-700 rounded-md cursor-pointer flex items-center gap-2"
-                >
-                  <Store className="w-5 h-5" />
-                  Commercial Awnings
-                </a>
-              </div>
-            </div>
-            <a 
-              className="text-gray-700 flex items-center gap-2 font-medium cursor-pointer"
-            >
-              <BookOpen className="w-5 h-5" />
-              Buying Guides
-              <svg className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </a>
-            <a 
-              onClick={() => handleNavigation('measuring-guide')}
-              className="text-gray-700 flex items-center gap-2 font-medium cursor-pointer"
-            >
-              <Ruler className="w-5 h-5" />
-              Measuring Guide
-            </a>
-            <div className="relative group">
-              <a 
-                className="text-gray-700 flex items-center gap-2 font-medium cursor-pointer"
-              >
-                <Building2 className="w-5 h-5" />
-                Commercial
-                <svg className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </a>
-              <div className="absolute hidden group-hover:block bg-white shadow-lg rounded-md p-2 w-64 z-10">
-                <a 
-                  onClick={() => handleNavigation('office-blinds')}
-                  className="block px-4 py-2 text-gray-700 rounded-md cursor-pointer flex items-center gap-2"
-                >
-                  <Building className="w-5 h-5" />
-                  Office Blinds & Shutters
-                </a>
-                <a 
-                  onClick={() => handleNavigation('school-blinds')}
-                  className="block px-4 py-2 text-gray-700 rounded-md cursor-pointer flex items-center gap-2"
-                >
-                  <Users className="w-5 h-5" />
-                  School Blinds & Shutters
-                </a>
-                <a 
-                  onClick={() => handleNavigation('hospital-blinds')}
-                  className="block px-4 py-2 text-gray-700 rounded-md cursor-pointer flex items-center gap-2"
-                >
-                  <Building2 className="w-5 h-5" />
-                  Hospital & Doctor's Surgery
-                </a>
-                <a 
-                  onClick={() => handleNavigation('restaurant-blinds')}
-                  className="block px-4 py-2 text-gray-700 rounded-md cursor-pointer flex items-center gap-2"
-                >
-                  <Store className="w-5 h-5" />
-                  Restaurant & Bar
-                </a>
-              </div>
-            </div>
-            <div className="relative group">
-              <a className="text-gray-700 flex items-center gap-2 font-medium cursor-pointer">
-                <Sofa className="w-5 h-5" />
-                Soft Furnishings
-                <svg className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </a>
-              <div className="absolute hidden group-hover:block bg-white shadow-lg rounded-md p-2 w-48 z-10">
-                <a 
-                  onClick={() => handleNavigation('bedding')}
-                  className="block px-4 py-2 text-gray-700 rounded-md cursor-pointer flex items-center gap-2"
-                >
-                  <BedDouble className="w-5 h-5" />
-                  Bedding
-                </a>
-                <a 
-                  onClick={() => handleNavigation('bathroom-textiles')}
-                  className="block px-4 py-2 text-gray-700 rounded-md cursor-pointer flex items-center gap-2"
-                >
-                  <Bath className="w-5 h-5" />
-                  Bathroom Textiles
-                </a>
-              </div>
-            </div>
-            <a className="text-gray-700 flex items-center gap-2 font-medium cursor-pointer">
-              <PanelTop className="w-5 h-5" />
-              Curtains
-            </a>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center justify-between h-16">
-            <h1 className="text-xl font-bold text-[#1E4D2B]">MODERN BLINDS</h1>
-            <button onClick={() => setIsOpen(!isOpen)} className="text-gray-700">
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
           </div>
         </div>
       </div>
 
+      {/* Mobile header */}
+      <div className="md:hidden flex items-center justify-between h-16 px-4">
+        <img 
+          src="/logos/cura-dental-logo.png" 
+          alt="Cura Dental Logo" 
+          className="h-10 w-auto"
+        />
+        <button 
+          onClick={() => setIsOpen(!isOpen)} 
+          className="text-gray-700 hover:text-primary transition-colors duration-200 p-2 hover:bg-gray-100"
+        >
+          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
+      </div>
+
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden border-b bg-gray-50">
-          <div className="px-4 py-3 space-y-2">
-            <div className="px-4 py-2">
-              <div className="flex items-center gap-2 font-medium mb-2">
-                <Blinds className="w-5 h-5" />
-                Blinds
+        <div className="md:hidden bg-white border-b shadow-lg">
+          <div className="px-4 py-3 space-y-4">
+            <div className="border-b border-gray-200 pb-3">
+              <div className="flex items-center gap-2 mb-3">
+                <Phone className="text-primary h-5 w-5" />
+                <p className="text-primary font-bold hover:opacity-80 transition-opacity">(905) 277-2872</p>
               </div>
-              <a 
-                onClick={() => handleNavigation('roller-blinds')}
-                className="block pl-4 py-1 text-gray-700 rounded-md cursor-pointer"
-              >
-                Roller Blinds
-              </a>
-              <a 
-                onClick={() => handleNavigation('venetian-blinds')}
-                className="block pl-4 py-1 text-gray-700 rounded-md cursor-pointer"
-              >
-                Venetian Blinds
-              </a>
-              <a 
-                onClick={() => handleNavigation('vertical-blinds')}
-                className="block pl-4 py-1 text-gray-700 rounded-md cursor-pointer"
-              >
-                Vertical Blinds
-              </a>
             </div>
-            <div className="px-4 py-2">
-              <div className="flex items-center gap-2 font-medium mb-2">
-                <Warehouse className="w-5 h-5" />
-                Shutters
-              </div>
-              <a 
-                onClick={() => handleNavigation('full-height-shutters')}
-                className="block pl-4 py-1 text-gray-700 rounded-md cursor-pointer"
-              >
-                Full Height
-              </a>
-              <a 
-                onClick={() => handleNavigation('tier-on-tier-shutters')}
-                className="block pl-4 py-1 text-gray-700 rounded-md cursor-pointer"
-              >
-                Tier on Tier
-              </a>
-            </div>
-            <div className="px-4 py-2">
-              <div className="flex items-center gap-2 font-medium mb-2">
-                <Umbrella className="w-5 h-5" />
-                Awnings
-              </div>
-              <a 
-                onClick={() => handleNavigation('patio-awnings')}
-                className="block pl-4 py-1 text-gray-700 rounded-md cursor-pointer"
-              >
-                Patio Awnings
-              </a>
-              <a 
-                onClick={() => handleNavigation('commercial-awnings')}
-                className="block pl-4 py-1 text-gray-700 rounded-md cursor-pointer"
-              >
-                Commercial Awnings
-              </a>
-            </div>
-            <a 
-              onClick={() => handleNavigation('buying-guides')}
-              className="flex items-center gap-2 px-4 py-2 text-gray-700 rounded-md cursor-pointer"
-            >
-              <BookOpen className="w-5 h-5" />
-              Buying Guides
-            </a>
-            <div className="px-4 py-2">
-              <div className="flex items-center gap-2 font-medium mb-2">
-                <Building2 className="w-5 h-5" />
-                Commercial
-              </div>
-              <a className="block pl-4 py-1 text-gray-700 rounded-md cursor-pointer">
-                Office Blinds & Shutters
-              </a>
-              <a className="block pl-4 py-1 text-gray-700 rounded-md cursor-pointer">
-                School Blinds & Shutters
-              </a>
-              <a className="block pl-4 py-1 text-gray-700 rounded-md cursor-pointer">
-                Hospital & Doctor's Surgery
-              </a>
-              <a className="block pl-4 py-1 text-gray-700 rounded-md cursor-pointer">
-                Restaurant & Bar
-              </a>
-            </div>
-            <a 
-              onClick={() => handleNavigation('soft-furnishings')}
-              className="flex items-center gap-2 px-4 py-2 text-gray-700 rounded-md cursor-pointer"
-            >
-              <Sofa className="w-5 h-5" />
-              Soft Furnishings
-            </a>
-            <a 
-              onClick={() => handleNavigation('curtains')}
-              className="flex items-center gap-2 px-4 py-2 text-gray-700 rounded-md cursor-pointer"
-            >
-              <PanelTop className="w-5 h-5" />
-              Curtains
-            </a>
-            <div className="mt-4 space-y-3 px-4 pb-4">
-              <p className="text-[#A4C639] font-bold text-xl">0808 196 5284</p>
-              <button className="w-full bg-[#A4C639] text-white px-4 py-3 font-semibold">
-                REQUEST A FREE QUOTATION
-              </button>
+            {/* Mobile navigation items */}
+            <div className="space-y-2">
+              {Object.entries(navItems).map(([key, item]) => (
+                <div key={key} className="space-y-1">
+                  <button
+                    onClick={() => setActiveDropdown(activeDropdown === key ? null : key)}
+                    className="w-full py-2 text-gray-700 hover:text-primary hover:bg-gray-50 flex items-center justify-between"
+                  >
+                    <span className="flex items-center gap-2">
+                      {item.icon}
+                      {item.label}
+                    </span>
+                    <ChevronDown size={16} className={`transform transition-transform ${activeDropdown === key ? 'rotate-180' : ''}`} />
+                  </button>
+                  
+                  {activeDropdown === key && (
+                    <div className="pl-8 space-y-1">
+                      {item.items.map((subItem) => (
+                        <button
+                          key={subItem.page}
+                          onClick={() => handleNavigation(subItem.page)}
+                          className="w-full py-2 text-gray-600 hover:text-primary hover:bg-gray-50 flex items-center gap-2"
+                        >
+                          {subItem.icon}
+                          {subItem.label}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>
       )}
+
+      <ContactFormModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </nav>
   );
 };

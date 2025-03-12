@@ -1,26 +1,38 @@
-import { Star, Shield, Award } from 'lucide-react';
+import { Star, Clock, Shield } from 'lucide-react';
 
 const TrustBar = () => {
-  return (
-    <div className="bg-[#1E4D2B] text-white py-4">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-3 gap-2 md:gap-8 items-center justify-items-center">
-          <div className="flex flex-col md:flex-row items-center justify-center md:gap-3 text-center md:text-left">
-            <Award className="w-5 h-5 mb-1 md:mb-0" />
-            <span className="text-xs md:text-sm font-medium">5+ Years of Excellence</span>
-          </div>
-          <div className="flex flex-col md:flex-row items-center justify-center md:gap-3 text-center md:text-left">
-            <Star className="w-5 h-5 mb-1 md:mb-0" />
-            <span className="text-xs md:text-sm font-medium">4.7 Ratings</span>
-          </div>
-          <div className="flex flex-col md:flex-row items-center justify-center md:gap-3 text-center md:text-left">
-            <Shield className="w-5 h-5 mb-1 md:mb-0" />
-            <span className="text-xs md:text-sm font-medium">Price Match Guarantee</span>
-          </div>
+    const trustPoints = [
+        {
+            icon: Star,
+            text: "Over 2000+ Happy Patients"
+        },
+        {
+            icon: Clock,
+            text: "Same Day Emergency Appointments"
+        },
+        {
+            icon: Shield,
+            text: "Top-Rated Dental Practice"
+        }
+    ];
+
+    return (
+        <div className="bg-black text-white py-3">
+            <div className="max-w-7xl mx-auto px-4">
+                <div className="flex justify-around items-center">
+                    {trustPoints.map((point, index) => {
+                        const IconComponent = point.icon;
+                        return (
+                            <div key={index} className="flex items-center gap-2">
+                                <IconComponent size={20} />
+                                <span className="text-sm font-medium">{point.text}</span>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
-}
+    );
+};
 
 export default TrustBar;

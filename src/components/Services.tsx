@@ -1,61 +1,103 @@
-const Services = () => {
+import { ArrowRight, Star, UserPlus, Search, HeartPulse, Syringe, Baby, Smile } from 'lucide-react';
+
+interface QuickServicesPreviewProps {
+    setCurrentPage: (page: string) => void;
+}
+
+const QuickServicesPreview = ({ setCurrentPage }: QuickServicesPreviewProps) => {
+    const handleServiceClick = (page: string) => {
+        setCurrentPage(page);
+    };
+
     const services = [
         {
-            title: "Blinds",
-            description: "Exceptional range of roller, venetian, and vertical blinds with custom fitting service.",
-            imageUrl: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&auto=format&fit=crop&q=80"
+            title: "New Patient",
+            description: "Comprehensive care for first-time visitors",
+            icon: <UserPlus size={28} style={{ color: '#81c5c6' }} />,
+            page: "new-patient"
         },
         {
-            title: "Shutters",
-            description: "Premium quality plantation shutters for timeless elegance and light control.",
-            imageUrl: "https://images.unsplash.com/photo-1615529328331-f8917597711f?w=800&auto=format&fit=crop&q=80"
+            title: "Examination",
+            description: "Thorough dental check-up and assessment",
+            icon: <Search size={28} style={{ color: '#81c5c6' }} />,
+            page: "examination"
         },
         {
-            title: "Awnings",
-            description: "Stylish outdoor shading solutions perfect for patios and commercial spaces.",
-            imageUrl: "https://images.unsplash.com/photo-1597294303765-c8ec8184aa5b?w=800&auto=format&fit=crop&q=80"
+            title: "Emergency Exams",
+            description: "Immediate care for dental emergencies",
+            icon: <HeartPulse size={28} style={{ color: '#81c5c6' }} />,
+            page: "emergency-exams"
         },
         {
-            title: "Curtains",
-            description: "Bespoke curtains tailored to your windows with professional measuring and installation.",
-            imageUrl: "https://images.unsplash.com/photo-1585517920927-93c2aa2fa63c?w=800&auto=format&fit=crop&q=80"
+            title: "Dental Hygiene",
+            description: "Professional cleaning and maintenance",
+            icon: <Star size={28} style={{ color: '#81c5c6' }} />,
+            page: "dental-hygiene"
+        },
+        {
+            title: "Endodontics",
+            description: "Root Canal Procedures",
+            icon: <Syringe size={28} style={{ color: '#81c5c6' }} />,
+            page: "endodontics"
+        },
+        {
+            title: "Teeth Whitening",
+            description: "Professional teeth brightening treatment",
+            icon: <Smile size={28} style={{ color: '#81c5c6' }} />,
+            page: "teeth-whitening"
+        },
+        {
+            title: "Crowns and Bridges",
+            description: "Custom-made dental restorations",
+            icon: <Star size={28} style={{ color: '#81c5c6' }} />,
+            page: "crowns-bridges"
+        },
+        {
+            title: "Pediatric Dentistry",
+            description: "Specialized care for children",
+            icon: <Baby size={28} style={{ color: '#81c5c6' }} />,
+            page: "pediatric"
         }
     ];
 
     return (
-        <div className="bg-gradient-to-b from-gray-50 to-gray-100">
-            <div className="max-w-7xl mx-auto pt-[20px]">
-                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 px-2 sm:px-4">
+        <section className="py-12 bg-gray-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {services.map((service, index) => (
                         <div 
-                            key={index} 
-                            className="bg-white shadow-md overflow-hidden"
+                            key={index}
+                            onClick={() => handleServiceClick(service.page)}
+                            className="bg-white rounded-lg shadow-md p-6 flex items-center justify-between cursor-pointer hover:shadow-lg"
                         >
-                            <div className="relative h-32 sm:h-48 overflow-hidden">
-                                <img
-                                    src={service.imageUrl}
-                                    alt={service.title}
-                                    className="w-full h-full object-cover"
-                                />
-                                <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+                            <div className="flex items-center gap-6">
+                                {service.icon}
+                                <div>
+                                    <h3 className="text-xl font-semibold text-black">
+                                        {service.title}
+                                    </h3>
+                                    <p className="text-gray-600 text-sm mt-1">
+                                        {service.description}
+                                    </p>
+                                </div>
                             </div>
-                            <div className="p-2 sm:p-4 text-center">
-                                <h3 className="text-lg sm:text-xl font-bold text-[#8b9e5b] mb-1 sm:mb-2">
-                                    {service.title}
-                                </h3>
-                                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-2 sm:mb-3">
-                                    {service.description}
-                                </p>
-                                <button className="px-4 sm:px-6 py-1 sm:py-2 bg-[#8b9e5b] text-white text-xs sm:text-sm font-medium">
-                                    Learn More
-                                </button>
+                            <div className="h-10 w-10 bg-secondary rounded-full flex items-center justify-center">
+                                <ArrowRight size={20} className="text-white" />
                             </div>
                         </div>
                     ))}
                 </div>
+                <div className="flex justify-center mt-8">
+                    <button 
+                        onClick={() => handleServiceClick('all-services')}
+                        className="border-2 border-secondary text-black hover:bg-secondary hover:text-white px-8 py-4 font-semibold transition-colors flex items-center gap-2"
+                    >
+                        ALL SERVICES <ArrowRight size={16} />
+                    </button>
+                </div>
             </div>
-        </div>
+        </section>
     );
 };
 
-export default Services;
+export default QuickServicesPreview;

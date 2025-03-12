@@ -3,35 +3,35 @@ import { Star } from 'lucide-react';
 const ReviewCards = () => {
   const reviews = [
     {
-      platform: 'Yelp',
-      rating: 5,
-      totalRating: 5,
-      logo: '/logos/yelp-logo.png',
-      starColor: 'text-red-500',
-      linkColor: 'text-red-600 hover:text-red-700',
-    },
-    {
       platform: 'Google',
-      rating: 4.9,
+      rating: 4.8,
       totalRating: 5,
-      logo: '/logos/Google__G__logo.svg.png',
       starColor: 'text-yellow-400',
-      linkColor: 'text-blue-600 hover:text-blue-700',
+      linkColor: 'text-primary hover:text-secondary',
+      logo: '/logos/Google__G__logo.svg.png'
     },
     {
       platform: 'Facebook',
-      rating: 5,
+      rating: 4.9,
       totalRating: 5,
-      logo: '/logos/facebook-logo.png',
-      starColor: 'text-blue-500',
-      linkColor: 'text-blue-600 hover:text-blue-700',
+      starColor: 'text-yellow-400',
+      linkColor: 'text-primary hover:text-secondary',
+      logo: '/logos/facebook-logo.png'
     },
+    {
+      platform: 'Yelp',
+      rating: 4.7,
+      totalRating: 5,
+      starColor: 'text-yellow-400',
+      linkColor: 'text-primary hover:text-secondary',
+      logo: '/logos/yelp-logo.png'
+    }
   ];
 
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-3 gap-3">
       {reviews.map((review) => (
-        <div key={review.platform} className="bg-white rounded-lg p-4 md:p-3 shadow-sm hover:shadow-md transition-shadow">
+        <div key={review.platform} className="bg-white p-4 md:p-3 shadow-sm hover:shadow-md transition-shadow">
           <div className="flex flex-col items-center">
             <img
               src={review.logo}
