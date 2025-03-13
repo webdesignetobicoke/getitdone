@@ -6,14 +6,44 @@ interface BreadcrumbsProps {
 }
 
 const Breadcrumbs = ({ currentPage, setCurrentPage }: BreadcrumbsProps) => {
-  // Define page categories and their parent relationships
   const pageCategories: Record<string, { parent: string; display: string }> = {
-    'roller-blinds': { parent: 'blinds', display: 'Roller Blinds' },
-    'venetian-blinds': { parent: 'blinds', display: 'Venetian Blinds' },
-    'blinds': { parent: 'home', display: 'Blinds' },
-    'shutters': { parent: 'home', display: 'Shutters' },
-    'awnings': { parent: 'home', display: 'Awnings' },
-    'curtains': { parent: 'home', display: 'Curtains' },
+    'home': { parent: '', display: 'Home' },
+    
+    // About section
+    'about-us': { parent: 'about', display: 'Meet Our Team' },
+    'our-story': { parent: 'about', display: 'Our Story' },
+    'our-team': { parent: 'about', display: 'Our Team' },
+    'technology': { parent: 'about', display: 'Technology' },
+    'office-tour': { parent: 'about', display: 'Office Tour' },
+    
+    // Services section
+    'general-dentistry': { parent: 'services', display: 'General Dentistry' },
+    'cosmetic-dentistry': { parent: 'services', display: 'Cosmetic Dentistry' },
+    'teeth-whitening': { parent: 'cosmetic-dentistry', display: 'Teeth Whitening' },
+    'emergency-care': { parent: 'services', display: 'Emergency Care' },
+    
+    // Invisalign section
+    'invisalign-process': { parent: 'invisalign', display: 'How It Works' },
+    'invisalign-timeline': { parent: 'invisalign', display: 'Treatment Timeline' },
+    'invisalign-consultation': { parent: 'invisalign', display: 'Book Consultation' },
+    
+    // Specialties section
+    'dental-implants': { parent: 'specialties', display: 'Dental Implants' },
+    'orthodontics': { parent: 'specialties', display: 'Orthodontics' },
+    'oral-surgery': { parent: 'specialties', display: 'Oral Surgery' },
+    
+    // Patients section
+    'patient-forms': { parent: 'patients', display: 'Patient Forms' },
+    'new-patients': { parent: 'patients', display: 'New Patients' },
+    'insurance': { parent: 'patients', display: 'Insurance' },
+    
+    // Main sections
+    'about': { parent: 'home', display: 'About' },
+    'services': { parent: 'home', display: 'Services' },
+    'invisalign': { parent: 'home', display: 'Invisalign®' },
+    'specialties': { parent: 'home', display: 'Specialties' },
+    'patients': { parent: 'home', display: 'Patients' },
+    'contact': { parent: 'home', display: 'Contact' }
   };
   
   // Function to get breadcrumb trail
@@ -49,7 +79,7 @@ const Breadcrumbs = ({ currentPage, setCurrentPage }: BreadcrumbsProps) => {
         <div className="flex items-center py-4 text-sm overflow-x-auto whitespace-nowrap">
           <button 
             onClick={() => setCurrentPage('home')}
-            className="text-gray-600 hover:text-[#A4C639] flex items-center"
+            className="text-gray-600 hover:text-[#32A2CD] flex items-center"
             aria-label="Home"
           >
             <Home size={16} />
@@ -59,11 +89,11 @@ const Breadcrumbs = ({ currentPage, setCurrentPage }: BreadcrumbsProps) => {
             <div key={item.id} className="flex items-center">
               <ChevronRight size={16} className="text-gray-400 mx-2" />
               {index === breadcrumbTrail.length - 1 ? (
-                <span className="text-[#A4C639] font-medium">{item.display}</span>
+                <span className="text-[#32A2CD] font-medium">{item.display}</span>
               ) : (
                 <button 
                   onClick={() => setCurrentPage(item.id)}
-                  className="text-gray-600 hover:text-[#A4C639]"
+                  className="text-gray-600 hover:text-[#32A2CD]"
                 >
                   {item.display}
                 </button>

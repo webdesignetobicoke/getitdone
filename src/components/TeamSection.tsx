@@ -70,7 +70,7 @@ const TeamSection = ({ setCurrentPage }: TeamSectionProps) => {
             onClick={() => setCurrentPage?.('about-us')}
             className="border-2 border-secondary text-black hover:bg-secondary hover:text-white px-8 py-4 font-semibold transition-colors flex items-center gap-2"
           >
-            ABOUT US <ArrowRight size={16} />
+            MEET OUR TEAM <ArrowRight size={16} />
           </button>
         </div>
       </div>

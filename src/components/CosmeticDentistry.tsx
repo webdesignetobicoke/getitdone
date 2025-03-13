@@ -6,7 +6,7 @@ interface CosmeticDentistryProps {
   setCurrentPage?: (page: string) => void;
 }
 
-const CosmeticDentistry = ({}: CosmeticDentistryProps) => {
+const CosmeticDentistry = ({ setCurrentPage }: CosmeticDentistryProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const renderStars = (rating: number): JSX.Element => (
@@ -65,9 +65,9 @@ const CosmeticDentistry = ({}: CosmeticDentistryProps) => {
               </div>
               <button 
                 onClick={() => setIsModalOpen(true)}
-                className="bg-[#32A2CD] text-white px-8 py-4 font-semibold hover:bg-opacity-90 flex items-center gap-2"
+                className="w-full sm:w-auto bg-[#32A2CD] text-white px-8 py-4 font-semibold hover:bg-opacity-90 flex items-center gap-2 justify-center"
               >
-                REQUEST AN APPOINTMENT <ArrowRight size={16} />
+                REQUEST AN APPOINTMENT <ArrowRight size={16} style={{ color: 'white' }} />
               </button>
             </div>
           </div>
@@ -95,101 +95,104 @@ const CosmeticDentistry = ({}: CosmeticDentistryProps) => {
             </p>
             
             <div className="grid sm:grid-cols-2 gap-6 my-8">
-              <div className="bg-gray-50 px-6 py-3 rounded-xl flex items-center justify-between">
-                <Smile className="text-primary" size={24} />
+              <div 
+                className="bg-gray-50 px-6 py-3 rounded-xl flex items-center justify-between cursor-pointer hover:bg-gray-100"
+                onClick={() => setCurrentPage?.('teeth-whitening')}
+              >
+                <Smile size={24} style={{ color: '#81C5C6' }} />
                 <div className="flex-1 mx-4">
                   <h3 className="font-semibold mb-2">Teeth Whitening</h3>
                   <p className="text-sm text-gray-600"></p>
                 </div>
-                <ArrowRight size={16} className="text-primary" />
+                <ArrowRight size={16} style={{ color: '#81C5C6' }} />
               </div>
               <div className="bg-gray-50 px-6 py-3 rounded-xl flex items-center justify-between">
-                <Smile className="text-primary" size={24} />
+                <Smile size={24} style={{ color: '#81C5C6' }} />
                 <div className="flex-1 mx-4">
                   <h3 className="font-semibold mb-2">Dental Veneers</h3>
                   <p className="text-sm text-gray-600"></p>
                 </div>
-                <ArrowRight size={16} className="text-primary" />
+                <ArrowRight size={16} style={{ color: '#81C5C6' }} />
               </div>
               <div className="bg-gray-50 px-6 py-3 rounded-xl flex items-center justify-between">
-                <Smile className="text-primary" size={24} />
+                <Smile size={24} style={{ color: '#81C5C6' }} />
                 <div className="flex-1 mx-4">
                   <h3 className="font-semibold mb-2">Dental Bonding</h3>
                   <p className="text-sm text-gray-600"></p>
                 </div>
-                <ArrowRight size={16} className="text-primary" />
+                <ArrowRight size={16} style={{ color: '#81C5C6' }} />
               </div>
               <div className="bg-gray-50 px-6 py-3 rounded-xl flex items-center justify-between">
-                <Smile className="text-primary" size={24} />
+                <Smile size={24} style={{ color: '#81C5C6' }} />
                 <div className="flex-1 mx-4">
                   <h3 className="font-semibold mb-2">Dental Crowns</h3>
                   <p className="text-sm text-gray-600"></p>
                 </div>
-                <ArrowRight size={16} className="text-primary" />
+                <ArrowRight size={16} style={{ color: '#81C5C6' }} />
               </div>
               <div className="bg-gray-50 px-6 py-3 rounded-xl flex items-center justify-between">
-                <Smile className="text-primary" size={24} />
+                <Smile size={24} style={{ color: '#81C5C6' }} />
                 <div className="flex-1 mx-4">
                   <h3 className="font-semibold mb-2">Inlays and Onlays</h3>
                   <p className="text-sm text-gray-600"></p>
                 </div>
-                <ArrowRight size={16} className="text-primary" />
+                <ArrowRight size={16} style={{ color: '#81C5C6' }} />
               </div>
               <div className="bg-gray-50 px-6 py-3 rounded-xl flex items-center justify-between">
-                <Smile className="text-primary" size={24} />
+                <Smile size={24} style={{ color: '#81C5C6' }} />
                 <div className="flex-1 mx-4">
                   <h3 className="font-semibold mb-2">Dental Implants</h3>
                   <p className="text-sm text-gray-600"></p>
                 </div>
-                <ArrowRight size={16} className="text-primary" />
+                <ArrowRight size={16} style={{ color: '#81C5C6' }} />
               </div>
               <div className="bg-gray-50 px-6 py-3 rounded-xl flex items-center justify-between">
-                <Smile className="text-primary" size={24} />
+                <Smile size={24} style={{ color: '#81C5C6' }} />
                 <div className="flex-1 mx-4">
                   <h3 className="font-semibold mb-2">Dental Bridges</h3>
                   <p className="text-sm text-gray-600"></p>
                 </div>
-                <ArrowRight size={16} className="text-primary" />
+                <ArrowRight size={16} style={{ color: '#81C5C6' }} />
               </div>
               <div className="bg-gray-50 px-6 py-3 rounded-xl flex items-center justify-between">
-                <Smile className="text-primary" size={24} />
+                <Smile size={24} style={{ color: '#81C5C6' }} />
                 <div className="flex-1 mx-4">
                   <h3 className="font-semibold mb-2">Gum Contouring</h3>
                   <p className="text-sm text-gray-600"></p>
                 </div>
-                <ArrowRight size={16} className="text-primary" />
+                <ArrowRight size={16} style={{ color: '#81C5C6' }} />
               </div>
               <div className="bg-gray-50 px-6 py-3 rounded-xl flex items-center justify-between">
-                <Smile className="text-primary" size={24} />
+                <Smile size={24} style={{ color: '#81C5C6' }} />
                 <div className="flex-1 mx-4">
                   <h3 className="font-semibold mb-2">Tooth Reshaping</h3>
                   <p className="text-sm text-gray-600"></p>
                 </div>
-                <ArrowRight size={16} className="text-primary" />
+                <ArrowRight size={16} style={{ color: '#81C5C6' }} />
               </div>
               <div className="bg-gray-50 px-6 py-3 rounded-xl flex items-center justify-between">
-                <Smile className="text-primary" size={24} />
+                <Smile size={24} style={{ color: '#81C5C6' }} />
                 <div className="flex-1 mx-4">
                   <h3 className="font-semibold mb-2">Clear Aligners/Invisalign</h3>
                   <p className="text-sm text-gray-600"></p>
                 </div>
-                <ArrowRight size={16} className="text-primary" />
+                <ArrowRight size={16} style={{ color: '#81C5C6' }} />
               </div>
               <div className="bg-gray-50 px-6 py-3 rounded-xl flex items-center justify-between">
-                <Smile className="text-primary" size={24} />
+                <Smile size={24} style={{ color: '#81C5C6' }} />
                 <div className="flex-1 mx-4">
                   <h3 className="font-semibold mb-2">Composite Restorations</h3>
                   <p className="text-sm text-gray-600"></p>
                 </div>
-                <ArrowRight size={16} className="text-primary" />
+                <ArrowRight size={16} style={{ color: '#81C5C6' }} />
               </div>
               <div className="bg-gray-50 px-6 py-3 rounded-xl flex items-center justify-between">
-                <Smile className="text-primary" size={24} />
+                <Smile size={24} style={{ color: '#81C5C6' }} />
                 <div className="flex-1 mx-4">
                   <h3 className="font-semibold mb-2">Smile Makeovers</h3>
                   <p className="text-sm text-gray-600"></p>
                 </div>
-                <ArrowRight size={16} className="text-primary" />
+                <ArrowRight size={16} style={{ color: '#81C5C6' }} />
               </div>
             </div>
 
@@ -211,60 +214,61 @@ const CosmeticDentistry = ({}: CosmeticDentistryProps) => {
           {/* Sidebar */}
           <div className="lg:col-span-1">
             <div className="sticky top-24 space-y-6">
-              <div className="bg-[#81C5C6] text-white p-8">
-                <p className="mb-6 text-black">To schedule a consultation with our cosmetic dental experts, please fill out the form below or call us at 905-277-2872 to book an appointment.</p>
+              <div className="bg-[#81C5C6] p-8 shadow-[0_20px_50px_rgba(129,197,198,0.3)] border-2 border-white/20 backdrop-blur-sm transform hover:translate-y-[-2px] transition-all duration-300 text-center">
+                <h3 className="text-2xl font-semibold mb-4 text-black">Schedule a Consultation</h3>
+                <p className="mb-6 text-black">To schedule a consultation with our cosmetic dental experts, please fill out the form below or call us at <a href="tel:905-277-2872" className="font-bold hover:underline">905-277-2872</a> to book an appointment.</p>
                 <form className="space-y-4" onSubmit={(e) => {
                   e.preventDefault();
                   setIsModalOpen(true);
                 }}>
-                  <div>
+                  <div className="relative">
                     <input 
                       type="text" 
                       placeholder="Your Name" 
-                      className="w-full px-4 py-2 text-gray-900"
+                      className="w-full px-4 py-3 text-gray-900 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
                       required
                     />
                   </div>
-                  <div>
+                  <div className="relative">
                     <input 
                       type="email" 
                       placeholder="Your Email" 
-                      className="w-full px-4 py-2 text-gray-900"
+                      className="w-full px-4 py-3 text-gray-900 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
                       required
                     />
                   </div>
-                  <div>
+                  <div className="relative">
                     <input 
                       type="tel" 
                       placeholder="Your Phone" 
-                      className="w-full px-4 py-2 text-gray-900"
+                      className="w-full px-4 py-3 text-gray-900 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
                       required
                     />
                   </div>
-                  <div>
+                  <div className="relative">
                     <input 
                       type="date" 
-                      className="w-full px-4 py-2 text-gray-900"
+                      className="w-full px-4 py-3 text-gray-900 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
                       required
                     />
                   </div>
-                  <div>
+                  <div className="relative">
                     <input 
                       type="time" 
-                      className="w-full px-4 py-2 text-gray-900"
+                      className="w-full px-4 py-3 text-gray-900 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
                       required
                     />
                   </div>
                   <button 
                     type="submit"
-                    className="w-full bg-[#32A2CD] text-white py-4 font-semibold hover:bg-opacity-90 flex items-center justify-center gap-2"
+                    className="w-full bg-[#32A2CD] text-white py-4 text-center font-semibold hover:bg-opacity-90 flex items-center justify-center gap-2 transform hover:translate-y-[-2px] transition-all duration-300 shadow-lg hover:shadow-xl"
                   >
-                    REQUEST AN APPOINTMENT <ArrowRight size={16} />
+                    <span className="text-center">REQUEST AN APPOINTMENT</span> <ArrowRight size={16} style={{ color: 'white' }} />
                   </button>
                 </form>
               </div>
-              <div className="bg-gray-50 p-6 rounded-xl">
-                <h3 className="font-semibold mb-4">Why Choose Cosmetic Services</h3>
+              <div className="bg-gray-50 p-6">
+                <h3 className="font-semibold mb-4 text-black">Why Choose Cosmetic Services</h3>
                 <ul className="space-y-3">
                   {[
                     '• Enhances Your Smile',
@@ -276,7 +280,7 @@ const CosmeticDentistry = ({}: CosmeticDentistryProps) => {
                     '• Improves Overall Health',
                     '• Enhances Quality of Life'
                   ].map((item, index) => (
-                    <li key={index} className="text-gray-600">
+                    <li key={index} className="text-black">
                       {item}
                     </li>
                   ))}

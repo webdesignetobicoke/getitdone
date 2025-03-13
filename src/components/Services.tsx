@@ -13,49 +13,49 @@ const QuickServicesPreview = ({ setCurrentPage }: QuickServicesPreviewProps) => 
         {
             title: "New Patient",
             description: "Comprehensive care for first-time visitors",
-            icon: <UserPlus size={28} style={{ color: '#81c5c6' }} />,
+            icon: <UserPlus size={28} style={{ color: '#81C5C6' }} />,
             page: "new-patient"
         },
         {
             title: "Examination",
             description: "Thorough dental check-up and assessment",
-            icon: <Search size={28} style={{ color: '#81c5c6' }} />,
+            icon: <Search size={28} style={{ color: '#81C5C6' }} />,
             page: "examination"
         },
         {
             title: "Emergency Exams",
             description: "Immediate care for dental emergencies",
-            icon: <HeartPulse size={28} style={{ color: '#81c5c6' }} />,
+            icon: <HeartPulse size={28} style={{ color: '#81C5C6' }} />,
             page: "emergency-exams"
         },
         {
             title: "Dental Hygiene",
             description: "Professional cleaning and maintenance",
-            icon: <Star size={28} style={{ color: '#81c5c6' }} />,
+            icon: <Star size={28} style={{ color: '#81C5C6' }} />,
             page: "dental-hygiene"
         },
         {
             title: "Endodontics",
             description: "Root Canal Procedures",
-            icon: <Syringe size={28} style={{ color: '#81c5c6' }} />,
+            icon: <Syringe size={28} style={{ color: '#81C5C6' }} />,
             page: "endodontics"
         },
         {
             title: "Teeth Whitening",
             description: "Professional teeth brightening treatment",
-            icon: <Smile size={28} style={{ color: '#81c5c6' }} />,
+            icon: <Smile size={28} style={{ color: '#81C5C6' }} />,
             page: "teeth-whitening"
         },
         {
             title: "Crowns and Bridges",
             description: "Custom-made dental restorations",
-            icon: <Star size={28} style={{ color: '#81c5c6' }} />,
+            icon: <Star size={28} style={{ color: '#81C5C6' }} />,
             page: "crowns-bridges"
         },
         {
             title: "Pediatric Dentistry",
             description: "Specialized care for children",
-            icon: <Baby size={28} style={{ color: '#81c5c6' }} />,
+            icon: <Baby size={28} style={{ color: '#81C5C6' }} />,
             page: "pediatric"
         }
     ];
@@ -82,7 +82,7 @@ const QuickServicesPreview = ({ setCurrentPage }: QuickServicesPreviewProps) => 
                                 </div>
                             </div>
                             <div className="h-10 w-10 bg-secondary rounded-full flex items-center justify-center">
-                                <ArrowRight size={20} className="text-white" />
+                                <ArrowRight size={20} style={{ color: '#81C5C6' }} />
                             </div>
                         </div>
                     ))}
@@ -92,7 +92,7 @@ const QuickServicesPreview = ({ setCurrentPage }: QuickServicesPreviewProps) => 
                         onClick={() => handleServiceClick('all-services')}
                         className="border-2 border-secondary text-black hover:bg-secondary hover:text-white px-8 py-4 font-semibold transition-colors flex items-center gap-2"
                     >
-                        ALL SERVICES <ArrowRight size={16} />
+                        ALL SERVICES <ArrowRight size={16} style={{ color: '#81C5C6' }} />
                     </button>
                 </div>
             </div>

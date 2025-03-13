@@ -28,9 +28,8 @@ const Navbar = ({ setCurrentPage }: NavbarProps) => {
       label: 'About',
       icon: <Info size={20} />,
       items: [
-        { label: 'About Us', icon: <Users size={18} />, page: 'about-us' },
         { label: 'Our Story', icon: <Building size={18} />, page: 'our-story' },
-        { label: 'Our Team', icon: <Users size={18} />, page: 'our-team' },
+        { label: 'Meet Our Team', icon: <Users size={18} />, page: 'about-us' },
         { label: 'Technology', icon: <Stethoscope size={18} />, page: 'technology' },
         { label: 'Office Tour', icon: <Building size={18} />, page: 'office-tour' }
       ]
@@ -105,7 +104,8 @@ const Navbar = ({ setCurrentPage }: NavbarProps) => {
               <img 
                 src="/logos/cura-dental-logo.png" 
                 alt="Cura Dental Logo" 
-                className="h-16 w-auto hover:opacity-90"
+                className="h-24 w-auto hover:opacity-90 cursor-pointer"
+                onClick={() => handleNavigation('home')}
               />
             </div>
             <div className="flex items-center gap-4">
@@ -171,11 +171,12 @@ const Navbar = ({ setCurrentPage }: NavbarProps) => {
       </div>
 
       {/* Mobile header */}
-      <div className="md:hidden flex items-center justify-between h-16 px-4">
+      <div className="md:hidden flex items-center justify-between h-24 px-4">
         <img 
           src="/logos/cura-dental-logo.png" 
           alt="Cura Dental Logo" 
-          className="h-10 w-auto"
+          className="h-24 w-auto cursor-pointer"
+          onClick={() => handleNavigation('home')}
         />
         <button 
           onClick={() => setIsOpen(!isOpen)} 
@@ -194,6 +195,12 @@ const Navbar = ({ setCurrentPage }: NavbarProps) => {
                 <Phone className="text-primary h-5 w-5" />
                 <p className="text-primary font-bold hover:opacity-80 transition-opacity">(905) 277-2872</p>
               </div>
+              <button 
+                onClick={() => setIsModalOpen(true)}
+                className="w-full bg-[#32A2CD] hover:bg-opacity-90 text-white px-6 py-3 flex items-center justify-center gap-2 font-medium"
+              >
+                REQUEST AN APPOINTMENT <ArrowRight size={16} />
+              </button>
             </div>
             {/* Mobile navigation items */}
             <div className="space-y-2">

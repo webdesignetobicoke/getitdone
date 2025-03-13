@@ -4,7 +4,8 @@ const MeetOurTeam = () => {
       name: "Dr. Milad Essa",
       role: "Doctor of Dental Surgery",
       image: "/Dr. Milad Essa.avif",
-      description: `Dr. Milad Essa received her D.D.S (Doctor of Dental Surgery) Degree from Dalhousie University in Halifax, Nova Scotia and her license to practice dentistry in the province of Ontario. She also received a Bachelor degree of Dental Surgery (B.D.S) from the University of Baghdad in Iraq.
+      description: `Dr. Milad Essa received her D.D.S (Doctor of Dental Surgery) Degree from Dalhousie University in Halifax, Nova Scotia and her license to practi      git config --global user.name "Your Name"
+      git config --global user.email "your.email@example.com"ce dentistry in the province of Ontario. She also received a Bachelor degree of Dental Surgery (B.D.S) from the University of Baghdad in Iraq.
 
 She is a standing member of the Canadian Dental Association, the Ontario Dental Association, and the Royal College of Dental Surgeons of Ontario. She has dedicated her academic and practice career to providing her patients with the best dentistry has to offer. In fact, she is continually improving herself and upgrading her knowledge with the latest dental techniques, approaches, and methodologies.
 
