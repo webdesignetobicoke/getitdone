@@ -1,12 +1,13 @@
 import { ArrowRight, Star } from 'lucide-react';
 import { useState } from 'react';
 import ContactFormModal from './ContactFormModal';
+import AppointmentForm from './AppointmentForm';
 
 interface TeethWhiteningProps {
   setCurrentPage?: (page: string) => void;
 }
 
-const TeethWhitening = ({}: TeethWhiteningProps) => {
+const TeethWhitening = ({ setCurrentPage }: TeethWhiteningProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const renderStars = (rating: number): JSX.Element => (
@@ -32,6 +33,44 @@ const TeethWhitening = ({}: TeethWhiteningProps) => {
       name: "Lisa K.",
       rating: 4,
       text: "Very happy with my brighter smile"
+    }
+  ];
+
+  const pricingTable = [
+    { service: 'In-Office Whitening', price: '$299' },
+    { service: 'Take-Home Whitening Kit', price: '$199' },
+    { service: 'Whitening Pen', price: '$49' }
+  ];
+
+  const services = [
+    {
+      title: 'In-Office Professional Whitening',
+      description: 'Our in-office whitening treatment uses professional-grade whitening agents and specialized light technology to achieve maximum results in just one visit. This treatment is perfect for those wanting immediate results.',
+      details: [
+        'Description of procedure and technology used',
+        'Treatment duration and expected results',
+        'Benefits over other methods',
+        'Pricing information'
+      ]
+    },
+    {
+      title: 'Take-Home Whitening Kits',
+      description: 'Our custom-fitted take-home whitening trays allow you to whiten your teeth in the comfort of your home. These professional-grade kits provide superior results compared to over-the-counter options.',
+      details: [
+        'Custom-fitted trays process',
+        'Instructions for use',
+        'Gradual results timeline',
+        'Pricing and package options'
+      ]
+    },
+    {
+      title: 'Combination Treatments',
+      description: 'Our combination treatments offer the best of both worlds, combining in-office and at-home whitening for optimal results. This approach ensures long-lasting and even whitening.',
+      details: [
+        'Benefits of combined in-office and at-home treatments',
+        'Maintenance recommendations',
+        'Special pricing for package deals'
+      ]
     }
   ];
 
@@ -135,6 +174,47 @@ const TeethWhitening = ({}: TeethWhiteningProps) => {
               </div>
             </div>
 
+            {/* Services Section */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+              <h2 className="text-3xl font-bold mb-6 text-black">Teeth Whitening Services</h2>
+              <div className="space-y-12">
+                {services.map((service, index) => (
+                  <div key={index} className="bg-gray-50 p-6 rounded-xl">
+                    <h3 className="text-xl font-bold mb-4 text-black">{service.title}</h3>
+                    <p className="text-gray-600 mb-4">{service.description}</p>
+                    <ul className="list-disc list-inside space-y-2">
+                      {service.details.map((detail, i) => (
+                        <li key={i} className="text-gray-600">{detail}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Pricing Table Section */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+              <h2 className="text-3xl font-bold mb-6 text-black">Teeth Whitening Pricing</h2>
+              <div className="overflow-x-auto">
+                <table className="min-w-full bg-white shadow-md rounded-lg">
+                  <thead>
+                    <tr>
+                      <th className="py-3 px-6 border-b-2 border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-700">Service</th>
+                      <th className="py-3 px-6 border-b-2 border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-700">Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {pricingTable.map((item, index) => (
+                      <tr key={index} className="hover:bg-gray-50 transition-colors duration-200">
+                        <td className="py-3 px-6 border-b border-gray-200 text-sm text-gray-700">{item.service}</td>
+                        <td className="py-3 px-6 border-b border-gray-200 text-sm text-gray-700">{item.price}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
             {/* Testimonials */}
             <div className="bg-gray-50 p-8 rounded-xl mt-12">
               <h3 className="text-2xl font-bold mb-6">Patient Reviews</h3>
@@ -153,59 +233,10 @@ const TeethWhitening = ({}: TeethWhiteningProps) => {
           {/* Sidebar */}
           <div className="lg:col-span-1">
             <div className="sticky top-24 space-y-6">
-              <div className="bg-[#81C5C6] p-8 shadow-[0_20px_50px_rgba(129,197,198,0.3)] border-2 border-white/20 backdrop-blur-sm transform hover:translate-y-[-2px] transition-all duration-300 text-center">
-                <h3 className="text-2xl font-semibold mb-4 text-black">Book Your Whitening Session</h3>
-                <p className="mb-6 text-black">Ready for a brighter smile? Schedule your teeth whitening consultation today. Call us at <a href="tel:905-277-2872" className="font-bold hover:underline">905-277-2872</a> or fill out the form below.</p>
-                <form className="space-y-4" onSubmit={(e) => {
-                  e.preventDefault();
-                  setIsModalOpen(true);
-                }}>
-                  <div className="relative">
-                    <input 
-                      type="text" 
-                      placeholder="Your Name" 
-                      className="w-full px-4 py-3 text-gray-900 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
-                      required
-                    />
-                  </div>
-                  <div className="relative">
-                    <input 
-                      type="email" 
-                      placeholder="Your Email" 
-                      className="w-full px-4 py-3 text-gray-900 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
-                      required
-                    />
-                  </div>
-                  <div className="relative">
-                    <input 
-                      type="tel" 
-                      placeholder="Your Phone" 
-                      className="w-full px-4 py-3 text-gray-900 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
-                      required
-                    />
-                  </div>
-                  <div className="relative">
-                    <input 
-                      type="date" 
-                      className="w-full px-4 py-3 text-gray-900 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
-                      required
-                    />
-                  </div>
-                  <div className="relative">
-                    <input 
-                      type="time" 
-                      className="w-full px-4 py-3 text-gray-900 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
-                      required
-                    />
-                  </div>
-                  <button 
-                    type="submit"
-                    className="w-full bg-[#32A2CD] text-white py-4 text-center font-semibold hover:bg-opacity-90 flex items-center justify-center gap-2 transform hover:translate-y-[-2px] transition-all duration-300 shadow-lg hover:shadow-xl"
-                  >
-                    <span className="text-center">BOOK NOW</span> <ArrowRight size={16} style={{ color: 'white' }} />
-                  </button>
-                </form>
-              </div>
+              <AppointmentForm 
+                title="Schedule Your Dental Visit"
+                description="Ready for a brighter smile? Schedule your teeth whitening consultation today."
+              />
               <div className="bg-gray-50 p-6">
                 <h3 className="font-semibold mb-4 text-black">Benefits of Professional Whitening</h3>
                 <ul className="space-y-3">

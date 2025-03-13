@@ -1,6 +1,7 @@
 import { ArrowRight, Smile, Star } from 'lucide-react';
 import { useState } from 'react';
 import ContactFormModal from './ContactFormModal';
+import AppointmentForm from './AppointmentForm';
 
 interface CosmeticDentistryProps {
   setCurrentPage?: (page: string) => void;
@@ -41,7 +42,7 @@ const CosmeticDentistry = ({ setCurrentPage }: CosmeticDentistryProps) => {
       <div className="bg-gray-100">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8">
           <div className="px-4 py-8">
-            <h1 className="text-4xl font-bold mb-4 text-black">Cosmetic Services in Mississauga</h1>
+            <h1 className="text-4xl font-bold mb-4 text-black">Cosmetic Dentistry in Mississauga</h1>
             <p className="text-lg mb-6 text-gray-800">
               Cosmetic dental services focus on the overall appearance of your smile, including your teeth and gums, and include treatments that try and improve the aesthetic quality of your smile.
             </p>
@@ -214,59 +215,10 @@ const CosmeticDentistry = ({ setCurrentPage }: CosmeticDentistryProps) => {
           {/* Sidebar */}
           <div className="lg:col-span-1">
             <div className="sticky top-24 space-y-6">
-              <div className="bg-[#81C5C6] p-8 shadow-[0_20px_50px_rgba(129,197,198,0.3)] border-2 border-white/20 backdrop-blur-sm transform hover:translate-y-[-2px] transition-all duration-300 text-center">
-                <h3 className="text-2xl font-semibold mb-4 text-black">Schedule a Consultation</h3>
-                <p className="mb-6 text-black">To schedule a consultation with our cosmetic dental experts, please fill out the form below or call us at <a href="tel:905-277-2872" className="font-bold hover:underline">905-277-2872</a> to book an appointment.</p>
-                <form className="space-y-4" onSubmit={(e) => {
-                  e.preventDefault();
-                  setIsModalOpen(true);
-                }}>
-                  <div className="relative">
-                    <input 
-                      type="text" 
-                      placeholder="Your Name" 
-                      className="w-full px-4 py-3 text-gray-900 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
-                      required
-                    />
-                  </div>
-                  <div className="relative">
-                    <input 
-                      type="email" 
-                      placeholder="Your Email" 
-                      className="w-full px-4 py-3 text-gray-900 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
-                      required
-                    />
-                  </div>
-                  <div className="relative">
-                    <input 
-                      type="tel" 
-                      placeholder="Your Phone" 
-                      className="w-full px-4 py-3 text-gray-900 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
-                      required
-                    />
-                  </div>
-                  <div className="relative">
-                    <input 
-                      type="date" 
-                      className="w-full px-4 py-3 text-gray-900 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
-                      required
-                    />
-                  </div>
-                  <div className="relative">
-                    <input 
-                      type="time" 
-                      className="w-full px-4 py-3 text-gray-900 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
-                      required
-                    />
-                  </div>
-                  <button 
-                    type="submit"
-                    className="w-full bg-[#32A2CD] text-white py-4 text-center font-semibold hover:bg-opacity-90 flex items-center justify-center gap-2 transform hover:translate-y-[-2px] transition-all duration-300 shadow-lg hover:shadow-xl"
-                  >
-                    <span className="text-center">REQUEST AN APPOINTMENT</span> <ArrowRight size={16} style={{ color: 'white' }} />
-                  </button>
-                </form>
-              </div>
+              <AppointmentForm 
+                title="Schedule Your Dental Visit"
+                description="Ready to transform your smile? Schedule your cosmetic dental consultation today."
+              />
               <div className="bg-gray-50 p-6">
                 <h3 className="font-semibold mb-4 text-black">Why Choose Cosmetic Services</h3>
                 <ul className="space-y-3">

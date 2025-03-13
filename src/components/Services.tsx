@@ -82,7 +82,7 @@ const QuickServicesPreview = ({ setCurrentPage }: QuickServicesPreviewProps) => 
                                 </div>
                             </div>
                             <div className="h-10 w-10 bg-secondary rounded-full flex items-center justify-center">
-                                <ArrowRight size={20} style={{ color: '#81C5C6' }} />
+                                <ArrowRight size={20} style={{ color: 'white' }} />
                             </div>
                         </div>
                     ))}

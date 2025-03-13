@@ -47,97 +47,89 @@ const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-lg w-full max-w-md p-6 relative">
+        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+            <div className="bg-[#81C5C6] w-full max-w-md p-8 relative shadow-[0_20px_50px_rgba(0,0,0,0.4)] border-2 border-white/30 backdrop-blur-sm transform transition-all duration-300 animate-fadeIn">
+                <div className="absolute -top-2 -right-2 -left-2 h-1 bg-gradient-to-r from-transparent via-white/60 to-transparent"></div>
+                <div className="absolute -bottom-2 -right-2 -left-2 h-1 bg-gradient-to-r from-transparent via-white/60 to-transparent"></div>
+                
                 <button 
                     onClick={onClose}
-                    className="absolute right-4 top-4 text-gray-500 hover:text-gray-700"
+                    className="absolute right-4 top-4 text-black hover:text-white p-2 rounded-full hover:bg-black/10 transition-colors"
                 >
                     <X size={24} />
                 </button>
 
-                <h2 className="text-2xl font-semibold text-black mb-4">Book Appointment</h2>
+                <h2 className="text-2xl font-semibold text-black mb-4 text-center">Schedule Your Dental Visit</h2>
                 
                 {isSuccess ? (
                     <div className="text-center py-8">
-                        <div className="text-[#32A2CD] text-lg font-medium mb-2">
+                        <div className="text-black text-lg font-medium mb-2">
                             Appointment request submitted successfully!
                         </div>
-                        <p className="text-gray-600">
+                        <p className="text-black">
                             We'll contact you shortly to confirm your appointment.
                         </p>
                     </div>
                 ) : (
                     <form onSubmit={handleSubmit} className="space-y-4">
                         <div>
-                            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                                Full Name
-                            </label>
                             <input
                                 type="text"
                                 id="name"
+                                placeholder="Full Name"
                                 required
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#32A2CD]"
+                                className="w-full px-4 py-3 text-gray-900 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300 text-left shadow-inner border border-white/30"
                                 value={formData.name}
                                 onChange={(e) => setFormData({...formData, name: e.target.value})}
                             />
                         </div>
 
                         <div>
-                            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                                Email
-                            </label>
                             <input
                                 type="email"
                                 id="email"
+                                placeholder="Email"
                                 required
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#32A2CD]"
+                                className="w-full px-4 py-3 text-gray-900 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300 text-left shadow-inner border border-white/30"
                                 value={formData.email}
                                 onChange={(e) => setFormData({...formData, email: e.target.value})}
                             />
                         </div>
 
                         <div>
-                            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                                Phone Number
-                            </label>
                             <input
                                 type="tel"
                                 id="phone"
+                                placeholder="Phone Number"
                                 required
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#32A2CD]"
+                                className="w-full px-4 py-3 text-gray-900 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300 text-left shadow-inner border border-white/30"
                                 value={formData.phone}
                                 onChange={(e) => setFormData({...formData, phone: e.target.value})}
                             />
                         </div>
 
                         <div>
-                            <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-1">
-                                Preferred Date
-                            </label>
                             <input
                                 type="date"
                                 id="date"
+                                placeholder="Preferred Date"
                                 required
                                 min={new Date().toISOString().split('T')[0]}
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#32A2CD]"
+                                className="w-full px-4 py-3 text-gray-900 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300 text-left shadow-inner border border-white/30"
                                 value={formData.date}
                                 onChange={(e) => setFormData({...formData, date: e.target.value})}
                             />
                         </div>
 
                         <div>
-                            <label htmlFor="time" className="block text-sm font-medium text-gray-700 mb-1">
-                                Preferred Time
-                            </label>
                             <select
                                 id="time"
                                 required
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#32A2CD]"
+                                className="w-full px-4 py-3 text-gray-900 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300 text-left shadow-inner border border-white/30"
                                 value={formData.time}
                                 onChange={(e) => setFormData({...formData, time: e.target.value})}
                             >
-                                <option value="">Select a time</option>
+                                <option value="">Select Time</option>
                                 <option value="09:00">9:00 AM</option>
                                 <option value="10:00">10:00 AM</option>
                                 <option value="11:00">11:00 AM</option>
@@ -150,13 +142,11 @@ const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => {
                         </div>
 
                         <div>
-                            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                                Additional Notes
-                            </label>
                             <textarea
                                 id="message"
                                 rows={3}
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#32A2CD]"
+                                placeholder="Additional Notes"
+                                className="w-full px-4 py-3 text-gray-900 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300 text-left shadow-inner border border-white/30"
                                 value={formData.message}
                                 onChange={(e) => setFormData({...formData, message: e.target.value})}
                             />
@@ -169,12 +159,14 @@ const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => {
                                 isSubmitting 
                                 ? 'bg-gray-400' 
                                 : 'bg-[#32A2CD] hover:bg-opacity-90'
-                            } text-white font-semibold py-2 px-4 rounded transition-colors`}
+                            } text-white py-4 text-center font-semibold hover:bg-opacity-90 flex items-center justify-center gap-2 transform hover:translate-y-[-2px] transition-all duration-300 shadow-lg hover:shadow-xl border border-white/30`}
                         >
-                            {isSubmitting ? 'Submitting...' : 'Submit'}
+                            {isSubmitting ? 'Submitting...' : 'REQUEST AN APPOINTMENT'}
                         </button>
                     </form>
                 )}
+                
+                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-1/2 h-8 bg-[#81C5C6]/30 blur-xl"></div>
             </div>
         </div>
     );
