@@ -39,19 +39,19 @@ const AppointmentForm = ({
 
   if (isSubmitted) {
     return (
-      <div className={`bg-[#81C5C6] p-8 shadow-[0_20px_50px_rgba(129,197,198,0.3)] border-2 border-white/20 backdrop-blur-sm transform hover:translate-y-[-2px] transition-all duration-300 text-center ${className}`}>
+      <div className={`bg-[#81C5C6] p-8 shadow-[0_20px_50px_rgba(129,197,198,0.3)] border-2 border-white/20 backdrop-blur-sm transform hover:translate-y-[-2px] transition-all duration-300 text-left ${className}`}>
         <div className="py-8">
-          <h3 className="text-2xl font-semibold mb-4 text-black">Thank You!</h3>
-          <p className="text-black">We've received your appointment request and will contact you shortly to confirm your appointment.</p>
+          <h3 className="text-2xl font-semibold mb-4 text-black text-center">Thank You!</h3>
+          <p className="text-black text-center">We've received your appointment request and will contact you shortly to confirm your appointment.</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className={`bg-[#81C5C6] p-8 shadow-[0_20px_50px_rgba(129,197,198,0.3)] border-2 border-white/20 backdrop-blur-sm transform hover:translate-y-[-2px] transition-all duration-300 text-center ${className}`}>
-      <h3 className="text-2xl font-semibold mb-4 text-black">{title}</h3>
-      <p className="mb-6 text-black">{description} Call us at <a href="tel:905-277-2872" className="font-bold hover:underline">905-277-2872</a> or fill out the form below.</p>
+    <div className={`bg-[#81C5C6] p-8 shadow-[0_20px_50px_rgba(129,197,198,0.3)] border-2 border-white/20 backdrop-blur-sm transform hover:translate-y-[-2px] transition-all duration-300 text-left ${className}`}>
+      <h3 className="text-2xl font-semibold mb-4 text-black text-center">{title}</h3>
+      <p className="mb-6 text-black text-center">{description} Call us at <a href="tel:905-277-2872" className="font-bold hover:underline">905-277-2872</a> or fill out the form below.</p>
       <form className="space-y-4" onSubmit={handleSubmit}>
         <div className="relative">
           <label htmlFor="name" className="block text-sm font-medium text-black mb-1">
@@ -130,9 +130,9 @@ const AppointmentForm = ({
         </div>
         <button 
           type="submit"
-          className="w-full bg-[#32A2CD] text-white py-4 text-center font-semibold hover:bg-opacity-90 flex items-center justify-center gap-2 transform hover:translate-y-[-2px] transition-all duration-300 shadow-lg hover:shadow-xl"
+          className="w-full bg-[#32A2CD] text-white py-4 font-semibold hover:bg-opacity-90 flex items-center justify-center gap-2 transform hover:translate-y-[-2px] transition-all duration-300 shadow-lg hover:shadow-xl"
         >
-          <span className="text-center">REQUEST AN APPOINTMENT</span> 
+          <span>REQUEST AN APPOINTMENT</span> 
           <ArrowRight size={16} style={{ color: 'white' }} />
         </button>
       </form>
