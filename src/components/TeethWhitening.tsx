@@ -2,6 +2,7 @@ import { ArrowRight, Star } from 'lucide-react';
 import { useState } from 'react';
 import ContactFormModal from './ContactFormModal';
 import AppointmentForm from './AppointmentForm';
+import BeforeAfter from './BeforeAfter';
 
 interface TeethWhiteningProps {
   setCurrentPage?: (page: string) => void;
@@ -42,38 +43,6 @@ const TeethWhitening = ({ setCurrentPage }: TeethWhiteningProps) => {
     { service: 'Whitening Pen', price: '$49' }
   ];
 
-  const services = [
-    {
-      title: 'In-Office Professional Whitening',
-      description: 'Our in-office whitening treatment uses professional-grade whitening agents and specialized light technology to achieve maximum results in just one visit. This treatment is perfect for those wanting immediate results.',
-      details: [
-        'Description of procedure and technology used',
-        'Treatment duration and expected results',
-        'Benefits over other methods',
-        'Pricing information'
-      ]
-    },
-    {
-      title: 'Take-Home Whitening Kits',
-      description: 'Our custom-fitted take-home whitening trays allow you to whiten your teeth in the comfort of your home. These professional-grade kits provide superior results compared to over-the-counter options.',
-      details: [
-        'Custom-fitted trays process',
-        'Instructions for use',
-        'Gradual results timeline',
-        'Pricing and package options'
-      ]
-    },
-    {
-      title: 'Combination Treatments',
-      description: 'Our combination treatments offer the best of both worlds, combining in-office and at-home whitening for optimal results. This approach ensures long-lasting and even whitening.',
-      details: [
-        'Benefits of combined in-office and at-home treatments',
-        'Maintenance recommendations',
-        'Special pricing for package deals'
-      ]
-    }
-  ];
-
   return (
     <div>
       {/* Hero Section */}
@@ -85,20 +54,36 @@ const TeethWhitening = ({ setCurrentPage }: TeethWhiteningProps) => {
               Transform your smile with our professional teeth whitening services. We use advanced whitening techniques to help you achieve a brighter, more confident smile safely and effectively.
             </p>
             <div className="space-y-6">
-              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-lg">
-                <h3 className="text-2xl font-bold mb-4 text-black">Special Offers</h3>
-                <div className="space-y-4">
-                  <div className="border-l-4 border-[#32A2CD] pl-4">
-                    <h4 className="font-semibold text-black">20% Off Professional Whitening</h4>
-                    <p className="text-gray-600">Limited time offer on all whitening treatments!</p>
+              <div className="relative overflow-hidden bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-200 p-8 rounded-xl shadow-xl">
+                <div className="absolute -top-20 -right-20 w-40 h-40 bg-white/20 rounded-full"></div>
+                <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-white/20 rounded-full"></div>
+                <h3 className="text-2xl font-bold mb-6 text-black relative z-10">Special Offers</h3>
+                <div className="space-y-4 relative z-10">
+                  <div className="bg-white p-4 rounded-lg shadow-md transform hover:-translate-y-1 transition-transform duration-300 border-l-4 border-yellow-400">
+                    <div className="flex justify-between items-center">
+                      <h4 className="font-bold text-base text-black">20% Off Professional Whitening</h4>
+                      <div className="bg-yellow-400 text-black font-bold rounded-full w-14 h-14 flex flex-col items-center justify-center text-center ml-2">
+                        <span className="text-base">20%</span>
+                        <span className="text-[10px]">OFF</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="border-l-4 border-[#32A2CD] pl-4">
-                    <h4 className="font-semibold text-black">Free Consultation</h4>
-                    <p className="text-gray-600">Book your complimentary whitening consultation</p>
+                  
+                  <div className="bg-white p-4 rounded-lg shadow-md transform hover:-translate-y-1 transition-transform duration-300 border-l-4 border-blue-400">
+                    <div className="flex justify-between items-center">
+                      <h4 className="font-bold text-base text-black">Free Consultation</h4>
+                      <span className="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-1 rounded-full ml-2">Value: $75</span>
+                    </div>
                   </div>
-                  <div className="border-l-4 border-[#32A2CD] pl-4">
-                    <h4 className="font-semibold text-black">Take-Home Kit Special</h4>
-                    <p className="text-gray-600">Save $100 on take-home whitening kits</p>
+                  
+                  <div className="bg-white p-4 rounded-lg shadow-md transform hover:-translate-y-1 transition-transform duration-300 border-l-4 border-green-400">
+                    <div className="flex justify-between items-center">
+                      <h4 className="font-bold text-base text-black">Take-Home Kit Special</h4>
+                      <div className="bg-green-500 text-white font-bold rounded-full w-14 h-14 flex flex-col items-center justify-center text-center ml-2">
+                        <span className="text-base">$100</span>
+                        <span className="text-[10px]">OFF</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -174,24 +159,6 @@ const TeethWhitening = ({ setCurrentPage }: TeethWhiteningProps) => {
               </div>
             </div>
 
-            {/* Services Section */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-              <h2 className="text-3xl font-bold mb-6 text-black">Teeth Whitening Services</h2>
-              <div className="space-y-12">
-                {services.map((service, index) => (
-                  <div key={index} className="bg-gray-50 p-6 rounded-xl">
-                    <h3 className="text-xl font-bold mb-4 text-black">{service.title}</h3>
-                    <p className="text-gray-600 mb-4">{service.description}</p>
-                    <ul className="list-disc list-inside space-y-2">
-                      {service.details.map((detail, i) => (
-                        <li key={i} className="text-gray-600">{detail}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
-
             {/* Pricing Table Section */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
               <h2 className="text-3xl font-bold mb-6 text-black">Teeth Whitening Pricing</h2>
@@ -212,6 +179,27 @@ const TeethWhitening = ({ setCurrentPage }: TeethWhiteningProps) => {
                     ))}
                   </tbody>
                 </table>
+              </div>
+            </div>
+
+            {/* Before After Section */}
+            <div className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#81C5C6' }}>
+              <h2 className="text-3xl font-bold mb-8 text-center text-white">Real Results from Our Patients</h2>
+              <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
+                <BeforeAfter
+                  beforeImage="/before-after/teeth-whitening-before.webp"
+                  afterImage="/before-after/teeth-whitening-after.webp"
+                  beforeLabel="Before Whitening"
+                  afterLabel="After Whitening"
+                  title="60-Min Whitening | 3+ Shade Jump"
+                />
+                <BeforeAfter
+                  beforeImage="/before-after/teeth-whitening-before.webp"
+                  afterImage="/before-after/teeth-whitening-after.webp"
+                  beforeLabel="Before Whitening"
+                  afterLabel="After Whitening"
+                  title="Take-Home Kit | 4+ Shade Jump"
+                />
               </div>
             </div>
 

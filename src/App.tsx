@@ -28,7 +28,37 @@ function App() {
             <div className="container mx-auto">
               <Hero />
               <Services setCurrentPage={setCurrentPage} />
-              <BeforeAfter />
+              
+              {/* Before After Section */}
+              <div className="py-16" style={{ backgroundColor: '#81C5C6' }}>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <h2 className="text-3xl font-bold mb-8 text-center text-white">Real Results from Our Patients</h2>
+                  <div className="grid md:grid-cols-3 gap-8">
+                    <BeforeAfter
+                      beforeImage="/before-after/teeth-whitening-before.webp"
+                      afterImage="/before-after/teeth-whitening-after.webp"
+                      beforeLabel="Before Whitening"
+                      afterLabel="After Whitening"
+                      title="60-Min Whitening | 3+ Shade Jump"
+                    />
+                    <BeforeAfter
+                      beforeImage="/before-after/teeth-whitening-before.webp"
+                      afterImage="/before-after/teeth-whitening-after.webp"
+                      beforeLabel="Before Whitening"
+                      afterLabel="After Whitening"
+                      title="45-Min Express | 2+ Shade Jump"
+                    />
+                    <BeforeAfter
+                      beforeImage="/before-after/teeth-whitening-before.webp"
+                      afterImage="/before-after/teeth-whitening-after.webp"
+                      beforeLabel="Before Whitening"
+                      afterLabel="After Whitening"
+                      title="Take-Home Kit | 4+ Shade Jump"
+                    />
+                  </div>
+                </div>
+              </div>
+
               <div className="px-4 space-y-12 py-8">
                 <LatestOffers />
                 <TeamSection setCurrentPage={setCurrentPage} />
