@@ -1,4 +1,4 @@
-import { ArrowRight, Broom, SprayBottle, Building2, Home, Window, Droplet, Trash2, Users } from 'lucide-react';
+import { ArrowRight, Home, Users, Star, Trash2 } from 'lucide-react';
 
 interface QuickServicesPreviewProps {
     setCurrentPage: (page: string) => void;
@@ -13,49 +13,49 @@ const QuickServicesPreview = ({ setCurrentPage }: QuickServicesPreviewProps) => 
         {
             title: "Carpet & Upholstery Cleaning",
             description: "Deep cleaning for carpets, sofas, and more",
-            icon: <Broom size={28} style={{ color: '#F78E3B' }} />, // Cleaning broom icon
+            icon: <Home size={28} style={{ color: '#F78E3B' }} />, // Safe icon
             page: "carpet-upholstery-cleaning"
         },
         {
             title: "Home Cleaning",
             description: "Comprehensive cleaning for your home",
-            icon: <Home size={28} style={{ color: '#F78E3B' }} />, // Home icon
+            icon: <Home size={28} style={{ color: '#F78E3B' }} />, // Safe icon
             page: "home-cleaning"
         },
         {
             title: "Office Cleaning",
             description: "Professional cleaning for offices and workspaces",
-            icon: <Building2 size={28} style={{ color: '#F78E3B' }} />, // Office building icon
+            icon: <Users size={28} style={{ color: '#F78E3B' }} />, // Safe icon
             page: "office-cleaning"
         },
         {
             title: "Move In/Out Cleaning",
             description: "Thorough cleaning for moving day",
-            icon: <Trash2 size={28} style={{ color: '#F78E3B' }} />, // Trash/cleanout icon
+            icon: <Trash2 size={28} style={{ color: '#F78E3B' }} />, // Safe icon
             page: "move-in-out-cleaning"
         },
         {
             title: "Window Cleaning",
             description: "Crystal clear windows, inside and out",
-            icon: <Window size={28} style={{ color: '#F78E3B' }} />, // Window icon
+            icon: <Star size={28} style={{ color: '#F78E3B' }} />, // Safe icon
             page: "window-cleaning"
         },
         {
             title: "Rug Cleaning",
             description: "Specialized care for area rugs",
-            icon: <SprayBottle size={28} style={{ color: '#F78E3B' }} />, // Spray bottle icon
+            icon: <Star size={28} style={{ color: '#F78E3B' }} />, // Safe icon
             page: "rug-cleaning"
         },
         {
             title: "Stain & Odor Removal",
             description: "Remove tough stains and odors from any surface",
-            icon: <Droplet size={28} style={{ color: '#F78E3B' }} />, // Droplet icon
+            icon: <Star size={28} style={{ color: '#F78E3B' }} />, // Safe icon
             page: "stain-odor-removal"
         },
         {
             title: "Commercial Cleaning",
             description: "Custom cleaning solutions for businesses",
-            icon: <Users size={28} style={{ color: '#F78E3B' }} />, // Team icon
+            icon: <Users size={28} style={{ color: '#F78E3B' }} />, // Safe icon
             page: "commercial-cleaning"
         }
     ];

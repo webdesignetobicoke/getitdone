@@ -9,22 +9,22 @@ const TeamSection = ({ setCurrentPage }: TeamSectionProps) => {
     {
       name: "Alex Johnson",
       role: "Lead Cleaning Specialist",
-      image: "/team-alex.jpg",
+      image: "/Mark_Carney_portrait_February_2020.jpg",
     },
     {
       name: "Maria Lopez",
       role: "Upholstery & Stain Expert",
-      image: "/team-maria.jpg",
+      image: "/Mark_Carney_portrait_February_2020.jpg",
     },
     {
       name: "James Smith",
       role: "Residential Cleaning Pro",
-      image: "/team-james.jpg",
+      image: "/Mark_Carney_portrait_February_2020.jpg",
     },
     {
       name: "Priya Patel",
       role: "Commercial Cleaning Lead",
-      image: "/team-priya.jpg",
+      image: "/Mark_Carney_portrait_February_2020.jpg",
     }
   ];
 
