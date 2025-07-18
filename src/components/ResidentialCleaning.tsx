@@ -76,11 +76,10 @@ const ResidentialCleaning = () => (
       {/* Services Menu */}
       <aside className="w-full lg:w-80">
         <div className="bg-[#144965] text-white rounded shadow p-6 mb-6">
-          <h3 className="text-lg font-bold mb-4">Our Services</h3>
-          <ul className="space-y-2">
+          <h3 className="text-lg font-bold mb-4">Residential Services</h3>
+          <ul className="space-y-2 list-none pl-0">
             {services.map((service, idx) => (
               <li key={idx} className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-primary rounded-full inline-block"></span>
                 {service === 'Move-In & Move-Out Cleaning' ? (
                   <Link to="/move-in-out-cleaning" className="underline hover:text-[#F78E3B] transition-colors">{service}</Link>
                 ) : (

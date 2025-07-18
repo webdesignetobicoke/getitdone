@@ -43,7 +43,9 @@ const Breadcrumbs = ({ currentPage, setCurrentPage }: BreadcrumbsProps) => {
     'invisalign': { parent: 'home', display: 'Invisalign®' },
     'specialties': { parent: 'home', display: 'Specialties' },
     'patients': { parent: 'home', display: 'Patients' },
-    'contact': { parent: 'home', display: 'Contact' }
+    'contact': { parent: 'home', display: 'Contact' },
+    'residential-cleaning': { parent: 'home', display: 'Residential Services' },
+    'move-in-out-cleaning': { parent: 'residential-cleaning', display: 'Move-In & Move-Out Cleaning' }
   };
   
   // Function to get breadcrumb trail
