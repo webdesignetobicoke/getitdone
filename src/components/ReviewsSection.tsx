@@ -53,7 +53,7 @@ const platformColors: Record<string, string> = {
 
 const ReviewsSection = () => (
   <section className="w-full py-16 bg-[#FFFBEA]">
-    <div className="max-w-5xl mx-auto px-4">
+    <div className="max-w-5xl mx-auto px-4 md:px-8">
       <div className="mb-10 text-center">
         <div className="inline-block px-4 py-1 mb-4 bg-yellow-200 rounded font-bold text-xs tracking-widest uppercase">Get It Done Cleaning</div>
         <h2 className="text-3xl md:text-4xl font-extrabold mb-2 text-black">What Our Clients Say</h2>

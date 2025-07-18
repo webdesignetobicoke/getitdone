@@ -37,9 +37,10 @@ const Footer = () => {
                                 <li className="pt-2">
                                     <button 
                                         onClick={() => setIsModalOpen(true)}
-                                        className="w-full bg-primary hover:bg-secondary text-white px-6 py-3 flex items-center justify-center gap-2 font-medium"
+                                        className="w-full bg-[#F78E3B] hover:bg-[#144966] text-white px-8 py-4 font-semibold shadow transition-colors flex items-center justify-center gap-2 text-lg"
                                     >
-                                        REQUEST A QUOTE <ArrowRight size={16} />
+                                        Request a Quote
+                                        <svg className="text-white" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="15" y2="12" /><polyline points="12 9 15 12 12 15" /></svg>
                                     </button>
                                 </li>
                                 <li>

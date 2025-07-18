@@ -89,7 +89,7 @@ const Navbar = ({ setCurrentPage }: NavbarProps) => {
               <img 
                 src="/getitdone-logo.png"
                 alt="Get It Done Cleaning Logo"
-                className="h-40 w-auto hover:opacity-90 cursor-pointer"
+                className="h-24 w-auto hover:opacity-90 cursor-pointer"
                 onClick={() => handleNavigation('home')}
               />
               <div className="flex items-center gap-6 ml-8">
@@ -150,10 +150,10 @@ const Navbar = ({ setCurrentPage }: NavbarProps) => {
               </div>
               <button 
                 onClick={() => setIsModalOpen(true)}
-                className="bg-primary hover:bg-secondary text-white px-6 py-3 flex items-center gap-2 font-medium"
+                className="bg-[#F78E3B] hover:bg-[#144966] text-white px-8 py-4 font-semibold shadow transition-colors flex items-center gap-2 text-lg"
               >
-                REQUEST A QUOTE
-                <ArrowRight size={16} style={{ color: 'black' }} />
+                Request a Quote
+                <svg className="text-white" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="15" y2="12" /><polyline points="12 9 15 12 12 15" /></svg>
               </button>
             </div>
           </div>
@@ -163,9 +163,9 @@ const Navbar = ({ setCurrentPage }: NavbarProps) => {
       {/* Mobile header */}
       <div className="md:hidden flex items-center justify-between h-24 px-4">
         <img 
-          src="/get it done logo.webp"
+          src="/getitdone-logo.png"
           alt="Get It Done Cleaning Logo"
-          className="h-40 w-auto cursor-pointer"
+          className="h-10 w-auto cursor-pointer"
           onClick={() => handleNavigation('home')}
         />
         <button 
@@ -187,9 +187,10 @@ const Navbar = ({ setCurrentPage }: NavbarProps) => {
               </div>
               <button 
                 onClick={() => setIsModalOpen(true)}
-                className="w-full bg-primary hover:bg-secondary text-white px-6 py-3 flex items-center justify-center gap-2 font-medium"
+                className="w-full bg-[#F78E3B] hover:bg-[#144966] text-white px-8 py-4 font-semibold shadow transition-colors flex items-center justify-center gap-2 text-lg"
               >
-                REQUEST A QUOTE <ArrowRight size={16} style={{ color: 'black' }} />
+                Request a Quote
+                <svg className="text-white" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="15" y2="12" /><polyline points="12 9 15 12 12 15" /></svg>
               </button>
             </div>
             {/* Mobile navigation items */}

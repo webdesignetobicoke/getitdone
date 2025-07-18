@@ -30,7 +30,7 @@ const TeamSection = ({ setCurrentPage }: TeamSectionProps) => {
 
   return (
     <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Our Expert Cleaning Team</h2>
           <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>

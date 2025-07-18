@@ -1,7 +1,7 @@
 const LatestOffers = () => {
     return (
         <div className="py-8 md:py-12 bg-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-4 md:px-8">
                 <div className="flex flex-col md:flex-row md:h-[400px] rounded-xl overflow-hidden border border-gray-200 shadow-lg">
                     {/* Left side - Promo Info */}
                     <div className="w-full md:w-1/2 relative bg-gradient-to-br from-white via-white to-secondary/20 p-6 md:p-10 flex flex-col justify-center">

@@ -9,8 +9,8 @@ const Hero = () => {
   return (
     <>
       <div className="relative bg-gray-50">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row relative">
-          <div className="relative z-10 w-full lg:w-1/2 px-4 sm:px-6 lg:px-8 py-8 flex flex-col justify-center">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col lg:flex-row relative">
+          <div className="relative z-10 w-full lg:w-1/2 px-0 py-8 flex flex-col justify-center">
             <h1 className="text-4xl sm:text-5xl font-bold text-black mb-4">
               Fresh, Clean Spaces Start Here
             </h1>
@@ -31,9 +31,10 @@ const Hero = () => {
             <div className="w-full">
               <button 
                 onClick={() => setIsModalOpen(true)}
-                className="w-full sm:w-auto bg-primary text-white px-8 py-4 font-semibold hover:bg-secondary flex items-center gap-2 justify-center transition-colors"
+                className="w-full sm:w-auto bg-[#F78E3B] hover:bg-[#144966] text-white px-8 py-4 font-semibold shadow transition-colors flex items-center gap-2 text-lg justify-center"
               >
-                REQUEST A QUOTE <ArrowRight size={16} />
+                Request a Quote
+                <svg className="text-white" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="15" y2="12" /><polyline points="12 9 15 12 12 15" /></svg>
               </button>
             </div>
             <div className="mt-6">
