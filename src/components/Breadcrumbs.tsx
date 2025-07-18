@@ -76,9 +76,7 @@ const Breadcrumbs = ({ currentPage, setCurrentPage }: BreadcrumbsProps) => {
   const breadcrumbTrail = getBreadcrumbTrail(currentPage);
   
   return (
-    <div className="bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center py-4 text-sm overflow-x-auto whitespace-nowrap">
+    <div className="flex items-center py-4 text-sm overflow-x-auto whitespace-nowrap">
           <button 
             onClick={() => setCurrentPage('home')}
             className="text-gray-600 hover:text-[#32A2CD] flex items-center"
@@ -102,8 +100,6 @@ const Breadcrumbs = ({ currentPage, setCurrentPage }: BreadcrumbsProps) => {
               )}
             </div>
           ))}
-        </div>
-      </div>
     </div>
   );
 };
