@@ -12,6 +12,7 @@ import TeethWhitening from './components/TeethWhitening';
 import BeforeAfter from './components/BeforeAfter';
 import RequestQuote from './components/RequestQuote';
 import SaleBanner from './components/SaleBanner';
+import ReviewsSection from './components/ReviewsSection';
 import { useState } from 'react';
 
 function App() {
@@ -64,6 +65,7 @@ function App() {
 
               <div className="px-4 space-y-12 py-8">
                 <LatestOffers />
+                <ReviewsSection />
                 <TeamSection setCurrentPage={setCurrentPage} />
               </div>
             </div>

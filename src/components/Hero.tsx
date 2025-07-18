@@ -22,7 +22,7 @@ const Hero = () => {
                 onClick={() => setIsModalOpen(true)}
                 className="w-full sm:w-auto bg-primary text-white px-8 py-4 font-semibold hover:bg-secondary flex items-center gap-2 justify-center transition-colors"
               >
-                REQUEST AN QUOTE <ArrowRight size={16} />
+                REQUEST A QUOTE <ArrowRight size={16} />
               </button>
             </div>
            

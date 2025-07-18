@@ -1,4 +1,4 @@
-import { ArrowRight, Star, UserPlus, Search, HeartPulse, Syringe, Baby, Smile } from 'lucide-react';
+import { ArrowRight, Broom, SprayBottle, Building2, Home, Window, Droplet, Trash2, Users } from 'lucide-react';
 
 interface QuickServicesPreviewProps {
     setCurrentPage: (page: string) => void;
@@ -13,49 +13,49 @@ const QuickServicesPreview = ({ setCurrentPage }: QuickServicesPreviewProps) => 
         {
             title: "Carpet & Upholstery Cleaning",
             description: "Deep cleaning for carpets, sofas, and more",
-            icon: <Star size={28} style={{ color: '#F78E3B' }} />, // You can change the icon if you want
+            icon: <Broom size={28} style={{ color: '#F78E3B' }} />, // Cleaning broom icon
             page: "carpet-upholstery-cleaning"
         },
         {
             title: "Home Cleaning",
             description: "Comprehensive cleaning for your home",
-            icon: <Smile size={28} style={{ color: '#F78E3B' }} />, // You can change the icon if you want
+            icon: <Home size={28} style={{ color: '#F78E3B' }} />, // Home icon
             page: "home-cleaning"
         },
         {
             title: "Office Cleaning",
             description: "Professional cleaning for offices and workspaces",
-            icon: <UserPlus size={28} style={{ color: '#F78E3B' }} />, // You can change the icon if you want
+            icon: <Building2 size={28} style={{ color: '#F78E3B' }} />, // Office building icon
             page: "office-cleaning"
         },
         {
             title: "Move In/Out Cleaning",
             description: "Thorough cleaning for moving day",
-            icon: <Search size={28} style={{ color: '#F78E3B' }} />, // You can change the icon if you want
+            icon: <Trash2 size={28} style={{ color: '#F78E3B' }} />, // Trash/cleanout icon
             page: "move-in-out-cleaning"
         },
         {
             title: "Window Cleaning",
             description: "Crystal clear windows, inside and out",
-            icon: <Star size={28} style={{ color: '#F78E3B' }} />, // You can change the icon if you want
+            icon: <Window size={28} style={{ color: '#F78E3B' }} />, // Window icon
             page: "window-cleaning"
         },
         {
             title: "Rug Cleaning",
             description: "Specialized care for area rugs",
-            icon: <Smile size={28} style={{ color: '#F78E3B' }} />, // You can change the icon if you want
+            icon: <SprayBottle size={28} style={{ color: '#F78E3B' }} />, // Spray bottle icon
             page: "rug-cleaning"
         },
         {
             title: "Stain & Odor Removal",
             description: "Remove tough stains and odors from any surface",
-            icon: <Search size={28} style={{ color: '#F78E3B' }} />, // You can change the icon if you want
+            icon: <Droplet size={28} style={{ color: '#F78E3B' }} />, // Droplet icon
             page: "stain-odor-removal"
         },
         {
             title: "Commercial Cleaning",
             description: "Custom cleaning solutions for businesses",
-            icon: <UserPlus size={28} style={{ color: '#F78E3B' }} />, // You can change the icon if you want
+            icon: <Users size={28} style={{ color: '#F78E3B' }} />, // Team icon
             page: "commercial-cleaning"
         }
     ];
@@ -90,9 +90,9 @@ const QuickServicesPreview = ({ setCurrentPage }: QuickServicesPreviewProps) => 
                 <div className="flex justify-center mt-8">
                     <button 
                         onClick={() => handleServiceClick('all-services')}
-                        className="border-2 border-primary text-black hover:bg-primary hover:text-white px-8 py-4 font-semibold transition-colors flex items-center gap-2"
+                        className="group border-2 border-primary text-black hover:bg-primary hover:text-white px-8 py-4 font-semibold transition-colors flex items-center gap-2"
                     >
-                        ALL SERVICES <ArrowRight size={16} style={{ color: '#F78E3B' }} />
+                        ALL SERVICES <ArrowRight size={16} className="text-black group-hover:text-white transition-colors" />
                     </button>
                 </div>
             </div>

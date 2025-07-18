@@ -92,10 +92,57 @@ const Navbar = ({ setCurrentPage }: NavbarProps) => {
                 className="h-40 w-auto hover:opacity-90 cursor-pointer"
                 onClick={() => handleNavigation('home')}
               />
+              <div className="flex items-center gap-6 ml-8">
+                {navItems.map((item) => (
+                  item.items ? (
+                    <div
+                      key={item.key}
+                      className="relative"
+                      onMouseEnter={() => setActiveDropdown(item.key)}
+                      onMouseLeave={() => setActiveDropdown(null)}
+                    >
+                      <button
+                        className="text-black hover:text-[#144966] cursor-pointer flex items-center gap-2 text-lg font-medium"
+                      >
+                        {item.label}
+                        <ChevronDown size={16} />
+                      </button>
+                      {activeDropdown === item.key && (
+                        <div className="absolute top-full left-0 w-max bg-white border border-gray-200 rounded-lg shadow-lg py-4 px-6 z-50 flex gap-8">
+                          {item.items.map((col) => (
+                            <div key={col.label}>
+                              <div className="font-bold text-black mb-2">{col.label}</div>
+                              <div className="space-y-1">
+                                {col.children.map((sub) => (
+                                  <button
+                                    key={sub.page}
+                                    onClick={() => handleNavigation(sub.page)}
+                                    className="w-full px-2 py-1 text-left text-black hover:text-[#F78E3B] hover:bg-gray-50 rounded"
+                                  >
+                                    {sub.label}
+                                  </button>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <button
+                      key={item.key}
+                      onClick={() => handleNavigation(item.page)}
+                      className="text-black hover:text-[#144966] cursor-pointer flex items-center gap-2 text-lg font-medium"
+                    >
+                      {item.label}
+                    </button>
+                  )
+                ))}
+              </div>
             </div>
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-4 border-r border-gray-200 pr-6">
-                <Phone className="text-[#32A2CD] h-8 w-8" />
+                <Phone className="text-primary h-8 w-8" />
                 <div>
                   <p className="text-xs text-gray-500 font-medium">Call us on</p>
                   <p className="font-bold text-lg text-gray-800 hover:text-[#144966]">(365) 336-3744</p>
@@ -108,62 +155,6 @@ const Navbar = ({ setCurrentPage }: NavbarProps) => {
                 REQUEST A QUOTE
                 <ArrowRight size={16} style={{ color: 'black' }} />
               </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Navigation */}
-      <div className="border-t border-b border-gray-200 shadow-sm bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="hidden md:flex items-center gap-8 py-4">
-            {/* Navigation menu items */}
-            <div className="flex items-center gap-6">
-              {navItems.map((item) => (
-                item.items ? (
-                  <div
-                    key={item.key}
-                    className="relative"
-                    onMouseEnter={() => setActiveDropdown(item.key)}
-                    onMouseLeave={() => setActiveDropdown(null)}
-                  >
-                    <button
-                      className="text-black hover:text-[#144966] cursor-pointer flex items-center gap-2 text-lg font-medium"
-                    >
-                      {item.label}
-                      <ChevronDown size={16} />
-                    </button>
-                    {activeDropdown === item.key && (
-                      <div className="absolute top-full left-0 w-max bg-white border border-gray-200 rounded-lg shadow-lg py-4 px-6 z-50 flex gap-8">
-                        {item.items.map((col) => (
-                          <div key={col.label}>
-                            <div className="font-bold text-black mb-2">{col.label}</div>
-                            <div className="space-y-1">
-                              {col.children.map((sub) => (
-                                <button
-                                  key={sub.page}
-                                  onClick={() => handleNavigation(sub.page)}
-                                  className="w-full px-2 py-1 text-left text-black hover:text-[#F78E3B] hover:bg-gray-50 rounded"
-                                >
-                                  {sub.label}
-                                </button>
-                              ))}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <button
-                    key={item.key}
-                    onClick={() => handleNavigation(item.page)}
-                    className="text-black hover:text-[#144966] cursor-pointer flex items-center gap-2 text-lg font-medium"
-                  >
-                    {item.label}
-                  </button>
-                )
-              ))}
             </div>
           </div>
         </div>
