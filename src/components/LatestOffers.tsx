@@ -12,16 +12,15 @@ const LatestOffers = () => {
                         </div>
                         
                         <h2 className="text-4xl font-bold text-primary mb-4">
-                            New Patient Special
+                            New Client Special
                         </h2>
                         <p className="text-xl font-bold text-secondary mb-6">
-                            Limited Time Offer
+                            Limited Time Cleaning Offer
                         </p>
                         
                         {/* Terms and Conditions */}
                         <div className="text-sm text-gray-500 space-y-2 mt-2">
-                            <p className="italic">*New patients only</p>
-                            <p className="italic">†Insurance may cover additional costs</p>
+                            <p className="italic">*First cleaning only</p>
                             <p className="italic">Terms and conditions apply. Contact us for details.</p>
                         </div>
                     </div>
@@ -31,8 +30,8 @@ const LatestOffers = () => {
                         {/* Top Offer */}
                         <div className="flex-1 bg-primary flex flex-col items-center justify-center text-white relative py-8 md:py-0">
                             <div className="text-4xl md:text-5xl font-bold mb-2">$99</div>
-                            <div className="text-lg md:text-xl font-semibold">Comprehensive Exam</div>
-                            <div className="text-base mt-2">Includes X-rays & Cleaning</div>
+                            <div className="text-lg md:text-xl font-semibold">Deep Clean Special</div>
+                            <div className="text-base mt-2">Includes all rooms</div>
                             {/* Plus Circle */}
                             <div className="absolute -bottom-4 w-8 h-8 bg-secondary rounded-full flex items-center justify-center z-10">
                                 <div className="relative w-full h-full">
@@ -48,9 +47,9 @@ const LatestOffers = () => {
                         <div className="flex-1 bg-secondary flex flex-col items-center justify-center text-white py-8 md:py-0">
                             <div className="text-4xl md:text-5xl font-bold mb-2">20% Off</div>
                             <div className="text-lg md:text-xl font-semibold text-center">
-                                Cosmetic Treatments
+                                Carpet & Upholstery Cleaning
                             </div>
-                            <div className="text-base mt-2">For New Patients</div>
+                            <div className="text-base mt-2">For New Clients</div>
                         </div>
                     </div>
                 </div>

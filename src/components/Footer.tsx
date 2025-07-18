@@ -14,13 +14,13 @@ const Footer = () => {
                             <h3 className="text-base font-bold text-black mb-2">Contact Information</h3>
                             <ul className="space-y-3">
                                 <li className="flex items-center gap-2 text-gray-600 text-sm">
-                                    <span>(905) 277-2872</span>
+                                    <span>info@getitdone.ca</span>
                                 </li>
                                 <li className="flex items-center gap-2 text-gray-600 text-sm">
-                                    <span>info@curadental.ca</span>
+                                    <span>+1 (365) 336-3744</span>
                                 </li>
                                 <li className="flex items-center gap-2 text-gray-600 text-sm">
-                                    <span>250 Dundas St W, Mississauga, ON L5B 1J2</span>
+                                    <span>Hamilton, Ontario</span>
                                 </li>
                                 <li>
                                     <h4 className="font-bold text-black text-sm mb-2">Opening Hours:</h4>
@@ -37,17 +37,17 @@ const Footer = () => {
                                 <li className="pt-2">
                                     <button 
                                         onClick={() => setIsModalOpen(true)}
-                                        className="w-full bg-[#32A2CD] hover:bg-opacity-90 text-white px-6 py-3 flex items-center justify-center gap-2 font-medium"
+                                        className="w-full bg-primary hover:bg-secondary text-white px-6 py-3 flex items-center justify-center gap-2 font-medium"
                                     >
-                                        REQUEST AN APPOINTMENT <ArrowRight size={16} />
+                                        REQUEST A QUOTE <ArrowRight size={16} />
                                     </button>
                                 </li>
                                 <li>
                                     <div className="flex space-x-4 pt-2">
-                                        <a href="#" className="w-8 h-8 bg-[#32A2CD] text-white rounded-full flex items-center justify-center hover:bg-opacity-90">
+                                        <a href="#" className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center hover:bg-secondary">
                                             <Instagram size={18} />
                                         </a>
-                                        <a href="#" className="w-8 h-8 bg-[#32A2CD] text-white rounded-full flex items-center justify-center hover:bg-opacity-90">
+                                        <a href="#" className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center hover:bg-secondary">
                                             <Facebook size={18} />
                                         </a>
                                     </div>
@@ -58,43 +58,39 @@ const Footer = () => {
                         <div className="space-y-2">
                             <h3 className="text-base font-bold text-black mb-2">Our Services</h3>
                             <ul className="space-y-3">
-                                <li><a href="#" className="text-gray-600 hover:text-secondary text-sm">General Dentistry</a></li>
-                                <li><a href="#" className="text-gray-600 hover:text-secondary text-sm">Cosmetic Dentistry</a></li>
-                                <li><a href="#" className="text-gray-600 hover:text-secondary text-sm">Orthodontics</a></li>
-                                <li><a href="#" className="text-gray-600 hover:text-secondary text-sm">Dental Implants</a></li>
-                                <li><a href="#" className="text-gray-600 hover:text-secondary text-sm">Emergency Care</a></li>
+                                <li><a href="#" className="text-gray-600 hover:text-secondary text-sm">Carpet & Upholstery Cleaning</a></li>
+                                <li><a href="#" className="text-gray-600 hover:text-secondary text-sm">Home Cleaning</a></li>
+                                <li><a href="#" className="text-gray-600 hover:text-secondary text-sm">Office Cleaning</a></li>
+                                <li><a href="#" className="text-gray-600 hover:text-secondary text-sm">Window Cleaning</a></li>
+                                <li><a href="#" className="text-gray-600 hover:text-secondary text-sm">Move In/Out Cleaning</a></li>
+                                <li><a href="#" className="text-gray-600 hover:text-secondary text-sm">Stain & Odor Removal</a></li>
                             </ul>
                         </div>
-                        
                         <div className="space-y-2">
-                            <h3 className="text-base font-bold text-black mb-2">Patient Resources</h3>
+                            <h3 className="text-base font-bold text-black mb-2">Add-Ons</h3>
                             <ul className="space-y-3">
-                                <li><a href="#" className="text-gray-600 hover:text-secondary text-sm">New Patient Forms</a></li>
-                                <li><a href="#" className="text-gray-600 hover:text-secondary text-sm">Insurance Information</a></li>
-                                <li><a href="#" className="text-gray-600 hover:text-secondary text-sm">Payment Options</a></li>
-                                <li><a href="#" className="text-gray-600 hover:text-secondary text-sm">Patient Education</a></li>
-                                <li><a href="#" className="text-gray-600 hover:text-secondary text-sm">FAQs</a></li>
+                                <li><a href="#" className="text-gray-600 hover:text-secondary text-sm">Laundry</a></li>
+                                <li><a href="#" className="text-gray-600 hover:text-secondary text-sm">Organization</a></li>
+                                <li><a href="#" className="text-gray-600 hover:text-secondary text-sm">Pet Odor Removal</a></li>
                             </ul>
                         </div>
-                        
                         <div className="space-y-2">
                             <h3 className="text-base font-bold text-black mb-2">About Us</h3>
                             <ul className="space-y-3">
                                 <li><a href="#" className="text-gray-600 hover:text-secondary text-sm">Our Team</a></li>
                                 <li><a href="#" className="text-gray-600 hover:text-secondary text-sm">Our Mission</a></li>
-                                <li><a href="#" className="text-gray-600 hover:text-secondary text-sm">Technology</a></li>
-                                <li><a href="#" className="text-gray-600 hover:text-secondary text-sm">Office Tour</a></li>
+                                <li><a href="#" className="text-gray-600 hover:text-secondary text-sm">Contact</a></li>
                             </ul>
                         </div>
                     </div>
                     
                     <div className="border-t border-gray-200 py-4">
                         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                            <p className="text-gray-600 text-sm">&copy; {new Date().getFullYear()} Cura Dental Clinic. All rights reserved.</p>
+                            <p className="text-gray-600 text-sm">&copy; {new Date().getFullYear()} GetItDone Cleaning. All rights reserved.</p>
                             <div className="flex items-center space-x-6">
-                                <a href="#" className="text-gray-600 hover:text-[#32A2CD] text-sm">Privacy Policy</a>
-                                <a href="#" className="text-gray-600 hover:text-[#32A2CD] text-sm">Sitemap</a>
-                                <a href="#" className="text-gray-600 hover:text-[#32A2CD] text-sm">Terms of Use</a>
+                                <a href="#" className="text-gray-600 hover:text-primary text-sm">Privacy Policy</a>
+                                <a href="#" className="text-gray-600 hover:text-primary text-sm">Sitemap</a>
+                                <a href="#" className="text-gray-600 hover:text-primary text-sm">Terms of Use</a>
                             </div>
                         </div>
                     </div>

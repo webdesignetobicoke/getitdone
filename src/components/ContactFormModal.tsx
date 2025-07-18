@@ -50,16 +50,16 @@ const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => {
 
     return (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="bg-[#81C5C6] w-full max-w-md p-8 relative shadow-[0_20px_50px_rgba(129,197,198,0.3)] border-2 border-white/20 backdrop-blur-sm">
+            <div className="bg-primary w-full max-w-md p-8 relative shadow-[0_20px_50px_rgba(247,142,59,0.1)] border-2 border-white/20 backdrop-blur-sm">
                 <button 
                     onClick={onClose}
-                    className="absolute right-4 top-4 text-black hover:text-white p-2 rounded-full hover:bg-black/10 transition-colors"
+                    className="absolute right-4 top-4 text-black hover:text-white p-2 rounded-full hover:bg-secondary/10 transition-colors"
                 >
                     <X size={24} />
                 </button>
 
-                <h3 className="text-2xl font-semibold mb-4 text-black text-center">Schedule Your Dental Visit</h3>
-                <p className="mb-6 text-black text-center">Ready for a consultation? Schedule your appointment today. Call us at <a href="tel:905-277-2872" className="font-bold hover:underline">905-277-2872</a> or fill out the form below.</p>
+                <h3 className="text-2xl font-semibold mb-4 text-black text-center">Request a Quote</h3>
+                <p className="mb-6 text-black text-center">Ready for a quote? Call us at <a href="tel:+13653363744" className="font-bold hover:underline">(365) 336-3744</a> or fill out the form below.</p>
 
                 <form className="space-y-4" onSubmit={handleSubmit}>
                     <div className="relative">
@@ -144,10 +144,10 @@ const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => {
 
                     <button
                         type="submit"
-                        className="w-full bg-[#32A2CD] text-white py-4 font-semibold hover:bg-opacity-90 flex items-center justify-center gap-2 transform hover:translate-y-[-2px] transition-all duration-300 shadow-lg hover:shadow-xl"
+                        className="w-full bg-primary hover:bg-secondary text-white py-4 font-semibold flex items-center justify-center gap-2 transform hover:translate-y-[-2px] transition-all duration-300 shadow-lg hover:shadow-xl"
                     >
-                        <span>REQUEST AN APPOINTMENT</span>
-                        <ArrowRight size={16} style={{ color: 'white' }} />
+                        <span>REQUEST A QUOTE</span>
+                        <ArrowRight size={16} style={{ color: 'black' }} />
                     </button>
                 </form>
             </div>

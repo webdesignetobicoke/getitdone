@@ -49,9 +49,9 @@ const TeethWhitening = ({ setCurrentPage }: TeethWhiteningProps) => {
       <div className="bg-gray-100">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8">
           <div className="px-4 py-8">
-            <h1 className="text-4xl font-bold mb-4 text-black">Professional Teeth Whitening in Mississauga</h1>
+            <h1 className="text-4xl font-bold mb-4 text-black">Rug Cleaning Services</h1>
             <p className="text-lg mb-6 text-gray-800">
-              Transform your smile with our professional teeth whitening services. We use advanced whitening techniques to help you achieve a brighter, more confident smile safely and effectively.
+              Our professional rug cleaning services restore the beauty and freshness of your area rugs. We use gentle, effective methods to remove dirt, stains, and odors, extending the life of your rugs.
             </p>
             <div className="space-y-6">
               <div className="relative overflow-hidden bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-200 p-8 rounded-xl shadow-xl">
@@ -61,26 +61,24 @@ const TeethWhitening = ({ setCurrentPage }: TeethWhiteningProps) => {
                 <div className="space-y-4 relative z-10">
                   <div className="bg-white p-4 rounded-lg shadow-md transform hover:-translate-y-1 transition-transform duration-300 border-l-4 border-yellow-400">
                     <div className="flex justify-between items-center">
-                      <h4 className="font-bold text-base text-black">20% Off Professional Whitening</h4>
+                      <h4 className="font-bold text-base text-black">15% Off Rug Cleaning</h4>
                       <div className="bg-yellow-400 text-black font-bold rounded-full w-14 h-14 flex flex-col items-center justify-center text-center ml-2">
-                        <span className="text-base">20%</span>
+                        <span className="text-base">15%</span>
                         <span className="text-[10px]">OFF</span>
                       </div>
                     </div>
                   </div>
-                  
                   <div className="bg-white p-4 rounded-lg shadow-md transform hover:-translate-y-1 transition-transform duration-300 border-l-4 border-blue-400">
                     <div className="flex justify-between items-center">
-                      <h4 className="font-bold text-base text-black">Free Consultation</h4>
-                      <span className="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-1 rounded-full ml-2">Value: $75</span>
+                      <h4 className="font-bold text-base text-black">Free Pickup & Delivery</h4>
+                      <span className="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-1 rounded-full ml-2">On all area rugs</span>
                     </div>
                   </div>
-                  
                   <div className="bg-white p-4 rounded-lg shadow-md transform hover:-translate-y-1 transition-transform duration-300 border-l-4 border-green-400">
                     <div className="flex justify-between items-center">
-                      <h4 className="font-bold text-base text-black">Take-Home Kit Special</h4>
+                      <h4 className="font-bold text-base text-black">Stain Removal Special</h4>
                       <div className="bg-green-500 text-white font-bold rounded-full w-14 h-14 flex flex-col items-center justify-center text-center ml-2">
-                        <span className="text-base">$100</span>
+                        <span className="text-base">$50</span>
                         <span className="text-[10px]">OFF</span>
                       </div>
                     </div>
@@ -89,7 +87,7 @@ const TeethWhitening = ({ setCurrentPage }: TeethWhiteningProps) => {
               </div>
               <button 
                 onClick={() => setIsModalOpen(true)}
-                className="w-full sm:w-auto bg-[#32A2CD] text-white px-8 py-4 font-semibold hover:bg-opacity-90 flex items-center gap-2 justify-center"
+                className="w-full sm:w-auto bg-primary text-white px-8 py-4 font-semibold hover:bg-secondary flex items-center gap-2 justify-center transition-colors"
               >
                 BOOK YOUR WHITENING SESSION <ArrowRight size={16} style={{ color: 'white' }} />
               </button>
@@ -97,8 +95,8 @@ const TeethWhitening = ({ setCurrentPage }: TeethWhiteningProps) => {
           </div>
           <div className="relative h-[400px] lg:h-auto">
             <img 
-              src="/cosmetic dental hero.jpg" 
-              alt="Teeth Whitening"
+              src="/rug-cleaning-hero.jpg" 
+              alt="Rug Cleaning"
               className="absolute inset-0 w-full h-full object-cover"
             />
           </div>
@@ -110,58 +108,35 @@ const TeethWhitening = ({ setCurrentPage }: TeethWhiteningProps) => {
         <div className="grid lg:grid-cols-3 gap-12">
           {/* Content Area */}
           <div className="lg:col-span-2 prose max-w-none">
-            <h2 className="text-3xl font-bold mb-6 text-black">Professional Teeth Whitening Services</h2>
+            <h2 className="text-3xl font-bold mb-6 text-black">Our Rug Cleaning Process</h2>
             <p className="text-gray-600 mb-6">
-              Our professional teeth whitening services provide dramatic results that you can't achieve with over-the-counter products. We offer both in-office and take-home whitening options to suit your lifestyle and preferences.
+              We carefully inspect, dust, wash, and dry your rugs using industry-leading techniques. Our process is safe for all rug types, including wool, silk, and synthetics.
             </p>
 
             <div className="space-y-8">
               <div className="bg-gray-50 p-6 rounded-xl">
-                <h3 className="text-xl font-bold mb-4">In-Office Whitening</h3>
+                <h3 className="text-xl font-bold mb-4">Inspection & Dusting</h3>
                 <p className="text-gray-600">
-                  Our in-office whitening treatment uses professional-grade whitening agents and specialized light technology to achieve maximum results in just one visit. This treatment is perfect for those wanting immediate results.
+                  We start by inspecting your rug for stains and damage, then remove dust and debris with specialized equipment.
                 </p>
-                <ul className="mt-4 space-y-2">
-                  <li className="flex items-center gap-2">
-                    <ArrowRight size={16} className="text-[#81C5C6]" />
-                    <span>Results in just one hour</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <ArrowRight size={16} className="text-[#81C5C6]" />
-                    <span>Up to 8 shades whiter</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <ArrowRight size={16} className="text-[#81C5C6]" />
-                    <span>Long-lasting results</span>
-                  </li>
-                </ul>
               </div>
-
               <div className="bg-gray-50 p-6 rounded-xl">
-                <h3 className="text-xl font-bold mb-4">Take-Home Whitening Kits</h3>
+                <h3 className="text-xl font-bold mb-4">Gentle Washing</h3>
                 <p className="text-gray-600">
-                  Our custom-fitted take-home whitening trays allow you to whiten your teeth in the comfort of your home. These professional-grade kits provide superior results compared to over-the-counter options.
+                  Our gentle washing process uses safe, effective cleaning solutions to lift dirt and stains without harming fibers.
                 </p>
-                <ul className="mt-4 space-y-2">
-                  <li className="flex items-center gap-2">
-                    <ArrowRight size={16} className="text-[#81C5C6]" />
-                    <span>Custom-fitted trays for optimal results</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <ArrowRight size={16} className="text-[#81C5C6]" />
-                    <span>Flexible treatment schedule</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <ArrowRight size={16} className="text-[#81C5C6]" />
-                    <span>Professional-strength whitening gel</span>
-                  </li>
-                </ul>
+              </div>
+              <div className="bg-gray-50 p-6 rounded-xl">
+                <h3 className="text-xl font-bold mb-4">Drying & Finishing</h3>
+                <p className="text-gray-600">
+                  Rugs are dried in a controlled environment and finished with a final inspection to ensure quality.
+                </p>
               </div>
             </div>
 
             {/* Pricing Table Section */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-              <h2 className="text-3xl font-bold mb-6 text-black">Teeth Whitening Pricing</h2>
+              <h2 className="text-3xl font-bold mb-6 text-black">Rug Cleaning Pricing</h2>
               <div className="overflow-x-auto">
                 <table className="min-w-full bg-white shadow-md rounded-lg">
                   <thead>
@@ -171,49 +146,63 @@ const TeethWhitening = ({ setCurrentPage }: TeethWhiteningProps) => {
                     </tr>
                   </thead>
                   <tbody>
-                    {pricingTable.map((item, index) => (
-                      <tr key={index} className="hover:bg-gray-50 transition-colors duration-200">
-                        <td className="py-3 px-6 border-b border-gray-200 text-sm text-gray-700">{item.service}</td>
-                        <td className="py-3 px-6 border-b border-gray-200 text-sm text-gray-700">{item.price}</td>
-                      </tr>
-                    ))}
+                    <tr className="hover:bg-gray-50 transition-colors duration-200">
+                      <td className="py-3 px-6 border-b border-gray-200 text-sm text-gray-700">Rug Cleaning (per sq. ft.)</td>
+                      <td className="py-3 px-6 border-b border-gray-200 text-sm text-gray-700">$2.50</td>
+                    </tr>
+                    <tr className="hover:bg-gray-50 transition-colors duration-200">
+                      <td className="py-3 px-6 border-b border-gray-200 text-sm text-gray-700">Stain Removal</td>
+                      <td className="py-3 px-6 border-b border-gray-200 text-sm text-gray-700">$25</td>
+                    </tr>
+                    <tr className="hover:bg-gray-50 transition-colors duration-200">
+                      <td className="py-3 px-6 border-b border-gray-200 text-sm text-gray-700">Pickup & Delivery</td>
+                      <td className="py-3 px-6 border-b border-gray-200 text-sm text-gray-700">Free</td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
             </div>
 
             {/* Before After Section */}
-            <div className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#81C5C6' }}>
-              <h2 className="text-3xl font-bold mb-8 text-center text-white">Real Results from Our Patients</h2>
+            <div className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#F78E3B' }}>
+              <h2 className="text-3xl font-bold mb-8 text-center text-white">Real Results from Our Clients</h2>
               <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
                 <BeforeAfter
-                  beforeImage="/before-after/teeth-whitening-before.webp"
-                  afterImage="/before-after/teeth-whitening-after.webp"
-                  beforeLabel="Before Whitening"
-                  afterLabel="After Whitening"
-                  title="60-Min Whitening | 3+ Shade Jump"
+                  beforeImage="/before-after/rug-cleaning-before.jpg"
+                  afterImage="/before-after/rug-cleaning-after.jpg"
+                  beforeLabel="Before Cleaning"
+                  afterLabel="After Cleaning"
+                  title="Persian Rug | Deep Clean"
                 />
                 <BeforeAfter
-                  beforeImage="/before-after/teeth-whitening-before.webp"
-                  afterImage="/before-after/teeth-whitening-after.webp"
-                  beforeLabel="Before Whitening"
-                  afterLabel="After Whitening"
-                  title="Take-Home Kit | 4+ Shade Jump"
+                  beforeImage="/before-after/rug-cleaning-before.jpg"
+                  afterImage="/before-after/rug-cleaning-after.jpg"
+                  beforeLabel="Before Cleaning"
+                  afterLabel="After Cleaning"
+                  title="Wool Rug | Stain Removal"
                 />
               </div>
             </div>
 
             {/* Testimonials */}
             <div className="bg-gray-50 p-8 rounded-xl mt-12">
-              <h3 className="text-2xl font-bold mb-6">Patient Reviews</h3>
+              <h3 className="text-2xl font-bold mb-6">Customer Reviews</h3>
               <div className="grid md:grid-cols-3 gap-6">
-                {testimonials.map((testimonial, index) => (
-                  <div key={index} className="bg-white p-4 rounded-lg">
-                    {renderStars(testimonial.rating)}
-                    <p className="text-gray-600 my-3 text-sm">{testimonial.text}</p>
-                    <p className="font-medium">{testimonial.name}</p>
-                  </div>
-                ))}
+                <div className="bg-white p-4 rounded-lg">
+                  {renderStars(5)}
+                  <p className="text-gray-600 my-3 text-sm">"My rugs look and smell amazing! Great service."</p>
+                  <p className="font-medium">Olga V.</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg">
+                  {renderStars(5)}
+                  <p className="text-gray-600 my-3 text-sm">"Fast pickup and delivery, very professional team."</p>
+                  <p className="font-medium">David S.</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg">
+                  {renderStars(4)}
+                  <p className="text-gray-600 my-3 text-sm">"Stains are gone, colors are bright again!"</p>
+                  <p className="font-medium">Nina P.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -222,21 +211,21 @@ const TeethWhitening = ({ setCurrentPage }: TeethWhiteningProps) => {
           <div className="lg:col-span-1">
             <div className="sticky top-24 space-y-6">
               <AppointmentForm 
-                title="Schedule Your Dental Visit"
-                description="Ready for a brighter smile? Schedule your teeth whitening consultation today."
+                title="Book Your Rug Cleaning"
+                description="Ready to refresh your rugs? Schedule your professional rug cleaning today."
               />
               <div className="bg-gray-50 p-6">
-                <h3 className="font-semibold mb-4 text-black">Benefits of Professional Whitening</h3>
+                <h3 className="font-semibold mb-4 text-black">Why Choose Our Rug Cleaning</h3>
                 <ul className="space-y-3">
                   {[
-                    '• Safe and Monitored Treatment',
-                    '• Immediate, Visible Results',
-                    '• Long-lasting Effects',
-                    '• Professional-grade Materials',
-                    '• Customized Treatment Plans',
-                    '• Minimal Sensitivity',
-                    '• Even, Natural-looking Results',
-                    '• Expert Care and Support'
+                    '• Removes dirt, stains, and odors',
+                    '• Safe for all rug types',
+                    '• Free pickup & delivery',
+                    '• Experienced, friendly staff',
+                    '• Satisfaction guaranteed',
+                    '• Affordable pricing',
+                    '• Eco-friendly cleaning',
+                    '• Detailed inspection & care'
                   ].map((item, index) => (
                     <li key={index} className="text-black">
                       {item}

@@ -12,17 +12,17 @@ const Hero = () => {
         <div className="max-w-7xl mx-auto">
           <div className="relative z-10 lg:w-1/2 px-4 sm:px-6 lg:px-8 py-8">
             <h1 className="text-4xl sm:text-5xl font-bold text-black mb-4">
-              Smile with Confidence
+              Fresh, Clean Spaces Start Here
             </h1>
             <p className="text-lg text-gray-600 mb-6">
-              Cura Dental Clinic has been dedicated to providing comprehensive dental care to patients of all ages since approximately 2017, offering a wide range of services to ensure optimal oral health and well-being.
+              GetItDone Cleaning Services has been providing professional carpet and upholstery cleaning for homes and businesses since 2017. Experience a healthier, fresher environment with our expert team and eco-friendly solutions.
             </p>
             <div className="w-full">
               <button 
                 onClick={() => setIsModalOpen(true)}
-                className="w-full sm:w-auto bg-[#32A2CD] text-white px-8 py-4 font-semibold hover:bg-opacity-90 flex items-center gap-2 justify-center"
+                className="w-full sm:w-auto bg-primary text-white px-8 py-4 font-semibold hover:bg-secondary flex items-center gap-2 justify-center transition-colors"
               >
-                REQUEST AN APPOINTMENT <ArrowRight size={16} />
+                REQUEST AN QUOTE <ArrowRight size={16} />
               </button>
             </div>
            
@@ -34,7 +34,7 @@ const Hero = () => {
         <div 
           className="hidden lg:block absolute right-0 top-0 w-1/2 h-full"
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=2668&ixlib=rb-4.0.3)',
+            backgroundImage: 'url(/main-page-hero.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}

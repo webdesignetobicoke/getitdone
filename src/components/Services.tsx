@@ -11,52 +11,52 @@ const QuickServicesPreview = ({ setCurrentPage }: QuickServicesPreviewProps) => 
 
     const services = [
         {
-            title: "New Patient",
-            description: "Comprehensive care for first-time visitors",
-            icon: <UserPlus size={28} style={{ color: '#81C5C6' }} />,
-            page: "new-patient"
+            title: "Carpet & Upholstery Cleaning",
+            description: "Deep cleaning for carpets, sofas, and more",
+            icon: <Star size={28} style={{ color: '#F78E3B' }} />, // You can change the icon if you want
+            page: "carpet-upholstery-cleaning"
         },
         {
-            title: "Examination",
-            description: "Thorough dental check-up and assessment",
-            icon: <Search size={28} style={{ color: '#81C5C6' }} />,
-            page: "examination"
+            title: "Home Cleaning",
+            description: "Comprehensive cleaning for your home",
+            icon: <Smile size={28} style={{ color: '#F78E3B' }} />, // You can change the icon if you want
+            page: "home-cleaning"
         },
         {
-            title: "Emergency Exams",
-            description: "Immediate care for dental emergencies",
-            icon: <HeartPulse size={28} style={{ color: '#81C5C6' }} />,
-            page: "emergency-exams"
+            title: "Office Cleaning",
+            description: "Professional cleaning for offices and workspaces",
+            icon: <UserPlus size={28} style={{ color: '#F78E3B' }} />, // You can change the icon if you want
+            page: "office-cleaning"
         },
         {
-            title: "Dental Hygiene",
-            description: "Professional cleaning and maintenance",
-            icon: <Star size={28} style={{ color: '#81C5C6' }} />,
-            page: "dental-hygiene"
+            title: "Move In/Out Cleaning",
+            description: "Thorough cleaning for moving day",
+            icon: <Search size={28} style={{ color: '#F78E3B' }} />, // You can change the icon if you want
+            page: "move-in-out-cleaning"
         },
         {
-            title: "Endodontics",
-            description: "Root Canal Procedures",
-            icon: <Syringe size={28} style={{ color: '#81C5C6' }} />,
-            page: "endodontics"
+            title: "Window Cleaning",
+            description: "Crystal clear windows, inside and out",
+            icon: <Star size={28} style={{ color: '#F78E3B' }} />, // You can change the icon if you want
+            page: "window-cleaning"
         },
         {
-            title: "Teeth Whitening",
-            description: "Professional teeth brightening treatment",
-            icon: <Smile size={28} style={{ color: '#81C5C6' }} />,
-            page: "teeth-whitening"
+            title: "Rug Cleaning",
+            description: "Specialized care for area rugs",
+            icon: <Smile size={28} style={{ color: '#F78E3B' }} />, // You can change the icon if you want
+            page: "rug-cleaning"
         },
         {
-            title: "Crowns and Bridges",
-            description: "Custom-made dental restorations",
-            icon: <Star size={28} style={{ color: '#81C5C6' }} />,
-            page: "crowns-bridges"
+            title: "Stain & Odor Removal",
+            description: "Remove tough stains and odors from any surface",
+            icon: <Search size={28} style={{ color: '#F78E3B' }} />, // You can change the icon if you want
+            page: "stain-odor-removal"
         },
         {
-            title: "Pediatric Dentistry",
-            description: "Specialized care for children",
-            icon: <Baby size={28} style={{ color: '#81C5C6' }} />,
-            page: "pediatric"
+            title: "Commercial Cleaning",
+            description: "Custom cleaning solutions for businesses",
+            icon: <UserPlus size={28} style={{ color: '#F78E3B' }} />, // You can change the icon if you want
+            page: "commercial-cleaning"
         }
     ];
 
@@ -90,9 +90,9 @@ const QuickServicesPreview = ({ setCurrentPage }: QuickServicesPreviewProps) => 
                 <div className="flex justify-center mt-8">
                     <button 
                         onClick={() => handleServiceClick('all-services')}
-                        className="border-2 border-secondary text-black hover:bg-secondary hover:text-white px-8 py-4 font-semibold transition-colors flex items-center gap-2"
+                        className="border-2 border-primary text-black hover:bg-primary hover:text-white px-8 py-4 font-semibold transition-colors flex items-center gap-2"
                     >
-                        ALL SERVICES <ArrowRight size={16} style={{ color: '#81C5C6' }} />
+                        ALL SERVICES <ArrowRight size={16} style={{ color: '#F78E3B' }} />
                     </button>
                 </div>
             </div>

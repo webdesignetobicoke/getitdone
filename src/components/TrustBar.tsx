@@ -4,15 +4,15 @@ const TrustBar = () => {
     const trustPoints = [
         {
             icon: Star,
-            text: "Over 2000+ Happy Patients"
+            text: "Over 2000+ Happy Clients"
         },
         {
             icon: Clock,
-            text: "Same Day Emergency Appointments"
+            text: "Flexible Scheduling"
         },
         {
             icon: Shield,
-            text: "Top-Rated Dental Practice"
+            text: "Top-Rated Cleaning Service"
         }
     ];
 

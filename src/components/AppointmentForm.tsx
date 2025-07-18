@@ -39,19 +39,19 @@ const AppointmentForm = ({
 
   if (isSubmitted) {
     return (
-      <div className={`bg-[#81C5C6] p-8 shadow-[0_20px_50px_rgba(129,197,198,0.3)] border-2 border-white/20 backdrop-blur-sm transform hover:translate-y-[-2px] transition-all duration-300 text-left ${className}`}>
+      <div className={`bg-primary p-8 shadow-[0_20px_50px_rgba(247,142,59,0.1)] border-2 border-white/20 backdrop-blur-sm transform hover:translate-y-[-2px] transition-all duration-300 text-left ${className}`}>
         <div className="py-8">
           <h3 className="text-2xl font-semibold mb-4 text-black text-center">Thank You!</h3>
-          <p className="text-black text-center">We've received your appointment request and will contact you shortly to confirm your appointment.</p>
+          <p className="text-black text-center">We've received your quote request and will contact you shortly.</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className={`bg-[#81C5C6] p-8 shadow-[0_20px_50px_rgba(129,197,198,0.3)] border-2 border-white/20 backdrop-blur-sm transform hover:translate-y-[-2px] transition-all duration-300 text-left ${className}`}>
-      <h3 className="text-2xl font-semibold mb-4 text-black text-center">{title}</h3>
-      <p className="mb-6 text-black text-center">{description} Call us at <a href="tel:905-277-2872" className="font-bold hover:underline">905-277-2872</a> or fill out the form below.</p>
+    <div className={`bg-primary p-8 shadow-[0_20px_50px_rgba(247,142,59,0.1)] border-2 border-white/20 backdrop-blur-sm transform hover:translate-y-[-2px] transition-all duration-300 text-left ${className}`}>
+      <h3 className="text-2xl font-semibold mb-4 text-black text-center">Request a Quote</h3>
+      <p className="mb-6 text-black text-center">Ready for a quote? Call us at <a href="tel:+13653363744" className="font-bold hover:underline">(365) 336-3744</a> or fill out the form below.</p>
       <form className="space-y-4" onSubmit={handleSubmit}>
         <div className="relative">
           <label htmlFor="name" className="block text-sm font-medium text-black mb-1">
@@ -130,10 +130,10 @@ const AppointmentForm = ({
         </div>
         <button 
           type="submit"
-          className="w-full bg-[#32A2CD] text-white py-4 font-semibold hover:bg-opacity-90 flex items-center justify-center gap-2 transform hover:translate-y-[-2px] transition-all duration-300 shadow-lg hover:shadow-xl"
+          className="w-full bg-primary hover:bg-secondary text-white py-4 font-semibold flex items-center justify-center gap-2 transform hover:translate-y-[-2px] transition-all duration-300 shadow-lg hover:shadow-xl"
         >
-          <span>REQUEST AN APPOINTMENT</span> 
-          <ArrowRight size={16} style={{ color: 'white' }} />
+          <span>REQUEST A QUOTE</span> 
+          <ArrowRight size={16} style={{ color: 'black' }} />
         </button>
       </form>
     </div>

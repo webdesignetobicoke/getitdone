@@ -10,6 +10,8 @@ import MeetOurTeam from './components/MeetOurTeam';
 import CosmeticDentistry from './components/CosmeticDentistry';
 import TeethWhitening from './components/TeethWhitening';
 import BeforeAfter from './components/BeforeAfter';
+import RequestQuote from './components/RequestQuote';
+import SaleBanner from './components/SaleBanner';
 import { useState } from 'react';
 
 function App() {
@@ -25,35 +27,36 @@ function App() {
       <main className="flex-grow">
         {currentPage === 'home' && (
           <>
-            <div className="container mx-auto">
+            <div className="container mx-auto px-4 space-y-12 py-8">
               <Hero />
+              <RequestQuote />
               <Services setCurrentPage={setCurrentPage} />
               
               {/* Before After Section */}
               <div className="py-16" style={{ backgroundColor: '#81C5C6' }}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                  <h2 className="text-3xl font-bold mb-8 text-center text-white">Real Results from Our Patients</h2>
+                  <h2 className="text-3xl font-bold mb-8 text-center text-white">Real Results from Our Clients</h2>
                   <div className="grid md:grid-cols-3 gap-8">
                     <BeforeAfter
-                      beforeImage="/before-after/teeth-whitening-before.webp"
-                      afterImage="/before-after/teeth-whitening-after.webp"
-                      beforeLabel="Before Whitening"
-                      afterLabel="After Whitening"
-                      title="60-Min Whitening | 3+ Shade Jump"
+                      beforeImage="/before-after/carpet-before.png"
+                      afterImage="/before-after/carpet-after.png"
+                      beforeLabel="Before Cleaning"
+                      afterLabel="After Cleaning"
+                      title="Carpet Cleaning | Stain Removal"
                     />
                     <BeforeAfter
-                      beforeImage="/before-after/teeth-whitening-before.webp"
-                      afterImage="/before-after/teeth-whitening-after.webp"
-                      beforeLabel="Before Whitening"
-                      afterLabel="After Whitening"
-                      title="45-Min Express | 2+ Shade Jump"
+                      beforeImage="/before-after/shower-before.png"
+                      afterImage="/before-after/shower-after.png"
+                      beforeLabel="Before Cleaning"
+                      afterLabel="After Cleaning"
+                      title="Shower Deep Clean"
                     />
                     <BeforeAfter
-                      beforeImage="/before-after/teeth-whitening-before.webp"
-                      afterImage="/before-after/teeth-whitening-after.webp"
-                      beforeLabel="Before Whitening"
-                      afterLabel="After Whitening"
-                      title="Take-Home Kit | 4+ Shade Jump"
+                      beforeImage="/before-after/carpet-before.png"
+                      afterImage="/before-after/carpet-after.png"
+                      beforeLabel="Before Cleaning"
+                      afterLabel="After Cleaning"
+                      title="Carpet Cleaning | Stain Removal"
                     />
                   </div>
                 </div>
