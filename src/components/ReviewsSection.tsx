@@ -78,6 +78,12 @@ const ReviewsSection = () => (
           </div>
         ))}
       </div>
+      <div className="flex justify-center mt-10">
+        <button className="group border-2 border-primary text-black hover:bg-primary hover:text-white px-8 py-4 font-semibold transition-colors flex items-center gap-2">
+          Read More Reviews
+          <svg className="text-black group-hover:text-white transition-colors" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="15" y2="12" /><polyline points="12 9 15 12 12 15" /></svg>
+        </button>
+      </div>
     </div>
   </section>
 );

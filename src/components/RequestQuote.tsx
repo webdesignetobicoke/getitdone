@@ -82,7 +82,7 @@ const RequestQuote: React.FC = () => {
     <div className="w-full my-12 shadow-lg p-0">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-stretch">
         {/* Left: Call-to-action */}
-        <div className="bg-[#144965] flex flex-col justify-center p-8 md:p-12 text-white h-full">
+        <div className="bg-[#144965] flex flex-col justify-center p-8 md:p-12 text-white h-full text-center md:text-left">
           <h3 className="text-2xl font-bold mb-4">Would you prefer to <span className="text-primary">talk with an expert now?</span></h3>
           <p className="mb-6">Speak with our cleaning team:</p>
           <a href="tel:+13653363744" className="block text-2xl md:text-3xl font-bold bg-primary text-black rounded-lg px-6 py-4 mb-6 text-center tracking-wide shadow-lg hover:bg-secondary hover:text-white transition-colors">
@@ -109,6 +109,7 @@ const RequestQuote: React.FC = () => {
         {/* Right: Form Card */}
         <div className="flex items-center justify-center bg-gray-50 p-4 md:p-8">
           <div className="w-full max-w-lg bg-white shadow-lg p-6 md:p-8">
+            <div className="mb-6 text-center text-gray-700 text-base font-medium">Fill out the form below and our team will get back to you with a personalized cleaning quote.</div>
             {/* Progress Bar */}
             <div className="flex items-center mb-8">
               {steps.map((label, idx) => (
